@@ -1,62 +1,97 @@
 \documentclass{sig-alternate}
 
+\usepackage{graphicx} 
+\usepackage{subfigure}
+\usepackage{paralist}
+
+\usepackage{hyperref}
+
+\usepackage{url}
+\usepackage{booktabs}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning, calc}
+
+\usepackage[draft,nomargin,footnote]{fixme}
+
+\graphicspath{{figs/}}
+
+\usepackage{xspace}
+\newcommand{\eg}{\textit{e.g.}\xspace}
+\newcommand{\etal}{\textit{et al.}\xspace}
+\newcommand{\ie}{\textit{i.e.}\xspace}
+\newcommand{\etc}{\textit{etc.}\xspace}
+\newcommand{\vs}{\textit{vs.}\xspace}
+
 \begin{document}
-%
-% --- Author Metadata here ---
-\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
-%\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
-%\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
-% --- End of Author Metadata ---
+
+% if need info about conference :
+%\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
 
 \title{CoWriter : Two case Studies}
 
-\numberofauthors{1} %  in this sample file, there are a *total*
-% of EIGHT authors. SIX appear on the 'first-page' (for formatting
-% reasons) and the remaining two appear in the \additionalauthors section.
-%
+\numberofauthors{1}
 \author{
-% You can go ahead and credit any number of authors here,
-% e.g. one 'row of three' or two rows (consisting of one row of three
-% and a second row of one, two or three).
-%
-% The command \alignauthor (no curly braces needed) should
-% precede each author name, affiliation/snail-mail address and
-% e-mail address. Additionally, tag each line of
-% affiliation/address with \affaddr, and tag the
-% e-mail address with \email.
-%
-% 1st. author
 \alignauthor
 Alexis Jacq, Severin Lemaignan, Fernando Garcia, Pierre Dillembourg\\
-	\affaddr{Computer Human Interaction for Learning and Instruction (CHILI)}\\
+    \affaddr{Computer Human Interaction for Learning and Instruction (CHILI)}\\
     \affaddr{Ecole Polytechnique F\'ed\'erale de Lausanne (EPFL)}\\
     \affaddr{CH-1015 Lausanne, Switzerland}\\
 }
 
 \date{date comes here}
-% Just remember to make sure that the TOTAL number of authors
-% is the number that will appear on the first page PLUS the
-% number that will appear in the \additionalauthors section.
+
 
 \maketitle
 \begin{abstract}
 Abstract comes here
 \end{abstract}
 
-% A category with the (minimum) three required fields
-%\category{H.4}{Information Systems Applications}{Miscellaneous}
-%A category including the fourth, optional field follows...
-%\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
-
-\terms{HRI}
-
 \keywords{handwriting learning, mutual modelling, ...}
 
 \section{Introduction}
 Introduction comes here
+% -> general design of cowriter
+% -> expected effects provided by the activity : the child judje imself through the robot progression and not throught its own progression : that implies a strong visual progression of the robot. 
+% -> expected effects provided by physical agent : pretend + protege effect
+% -> different goals : self confidence + pure writing skills
+
+%   \begin{figure}
+%       \centering
+%       \includegraphics[width=0.9\linewidth]{henry}
+%       \caption{Henry teaching Nao how to write numbers, with the help of an occupational therapist.}
+%       \label{fig:henry}
+%   \end{figure}
 
 \section{case 1 : Diego}
-Description of experiments \& results with Diego
+Diego is a 5 years hold child. 
+A few days before the experiment, his mother provided us with a picture showing
+some of his handwriting works (figure~\ref{fig:diego_start}). 
+This sample allowed us to create a dataset of letters based on his main mistake.
+Then we run a PCA algorithm feed by this dataset to extract eigenvectors
+representing the direction of the most important
+deformations (figure~\ref{fig:3a}). 
+Our idea was to use it to make the robot amplifying the mistakes of Diego. 
+Thus, by correcting the robot, Diego was actually going to correct himself.    
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{diego_start}
+    \caption{Homework performed by Diego before the experiment. It gives an
+    overvew of his starting level in handwriting.}
+    \label{fig:diego_start}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{3a}
+    \caption{Letter deformation along an eigenvector. \emph{Left} : the non-deformed
+        letter (origin of the eigenspace). \emph{Middle} : the actual Diego's
+        deformation (from figure~\ref{fig:diego_start}). \emph{Right} : exaggerated
+deformation along the eigenvector that encode Diego's mistake.} 
+    \label{fig:3a}
+\end{figure}
 
 \subsection{Experiment design}
 
@@ -73,17 +108,6 @@ Description of experiments \& results with Diego
 
 \section{Conclusions}
 
-
-%
-% The following two commands are all you need in the
-% initial runs of your .tex file to
-% produce the bibliography for the citations in your paper.
 \bibliographystyle{abbrv}
-\bibliography{sigproc}  % sigproc.bib is the name of the Bibliography in this case
-% You must have a proper ".bib" file
-%  and remember to run:
-% latex bibtex latex latex
-% to resolve all references
-%
-% ACM needs 'a single self-contained file'!
+\bibliography{cowriter} 
 \end{document}
