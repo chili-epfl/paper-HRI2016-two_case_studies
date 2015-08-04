@@ -31,14 +31,34 @@
 
 \title{CoWriter : Two case Studies}
 
-\numberofauthors{1}
-\author{
-\alignauthor
-Alexis Jacq, Severin Lemaignan, Fernando Garcia, Pierre Dillembourg\\
-    \affaddr{Computer Human Interaction for Learning and Instruction (CHILI)}\\
-    \affaddr{Ecole Polytechnique F\'ed\'erale de Lausanne (EPFL)}\\
-    \affaddr{CH-1015 Lausanne, Switzerland}\\
-}
+
+\author{Alexis Jacq$^{1,2}$, S\'everin Lemaignan$^1$, Fernando Garcia$^1$, Ana Paiva$^2$, Pierre Dillenbourg$^1$ \\
+$^1$CHILI Lab, \'Ecole Polytechnique F\'ed\'erale de Lausanne, Suisse,\\
+$^2$Instituto Superior T\'{e}cnico, University of Lisbon, Portugal}
+
+
+%   \author{
+%   % 1st. author
+%   \alignauthor
+%   Alexis Jacq\\
+%       \affaddr{EPFL}\\
+%       \affaddr{IST}
+%   % 2nd. author
+%   \alignauthor
+%   Severin Lemaignan\\
+%       \affaddr{EPFL}
+%   \and
+%   % 3rd. author
+%   \alignauthor Fernando Garcia\\
+%       \affaddr{EPFL}
+%
+%   \alignauthor Pierre Dillembourg\\
+%       \affaddr{EPFL}
+%
+%   \alignauthor Ana Paiva\\
+%           \affaddr{IST}
+%    }
+
 
 \date{date comes here}
 
@@ -48,14 +68,13 @@ Alexis Jacq, Severin Lemaignan, Fernando Garcia, Pierre Dillembourg\\
 Abstract comes here
 \end{abstract}
 
-\keywords{handwriting learning, mutual modelling, ...}
+\keywords{robot-supported educative activitiy, handwriting learning, learning
+by teaching}
 
 \section{Introduction}
-Introduction comes here
-% -> general design of cowriter
-% -> expected effects provided by the activity : the child judje imself through the robot progression and not throught its own progression : that implies a strong visual progression of the robot. 
-% -> expected effects provided by physical agent : pretend + protege effect
-% -> different goals : self confidence + pure writing skills
+% -> A new hri field
+% -> What as been done before
+% -> what is new here
 
 %   \begin{figure}
 %       \centering
@@ -64,55 +83,82 @@ Introduction comes here
 %       \label{fig:henry}
 %   \end{figure}
 
+\section{The CoWriter activity}
+\subsection{Children teach handwriting to the robot}
+\subsection{Our approach}
+
+\subsection{Learning and generating letters}
+
+\subsection{robotic implementation}
+
 \section{case 1 : Diego}
-Diego is a 5 years hold child. 
-A few days before the experiment, his mother provided us with a picture showing
-some of his handwriting works (figure~\ref{fig:diego_start}). 
-This sample allowed us to create a dataset of letters based on his main mistake.
-Then we run a PCA algorithm feed by this dataset to extract eigenvectors
-representing the direction of the most important
-deformations (figure~\ref{fig:3a}). 
-Our idea was to use it to make the robot amplifying the mistakes of Diego. 
-Thus, by correcting the robot, Diego was actually going to correct himself.    
+\subsection{Context}
+Diego is a five years old child. Her mother told us he had difficulties to learn
+writing at school, particulary in drawing cursive letters. Before experiments,
+she provided us with a homework of Diego to show explicitly his handrwiting
+level (fig). 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\linewidth]{diego_start}
-    \caption{Homework performed by Diego before the experiment. It gives an
-    overvew of his starting level in handwriting.}
-    \label{fig:diego_start}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\linewidth]{3a}
-    \caption{Letter deformation along an eigenvector. \emph{Left} : the non-deformed
-        letter (origin of the eigenspace). \emph{Middle} : the actual Diego's
-        deformation (from figure~\ref{fig:diego_start}). \emph{Right} : exaggerated
-deformation along the eigenvector that encode Diego's mistake.} 
-    \label{fig:3a}
-\end{figure}
+From our perspective, Diego is shy and quiet. He suffers from a poor
+self-esteam much more than any actual trouble in writing.
 
 \subsection{Questions}
-This was the first time we where trying a long-terme interaction between a child
-and the CoWriter robot. So the first aim of this study was to see if such an
-interaction was simply possible. If we could create an environement to keep a child engaged
-during one hour just in writing words with the robot.
-The second question was focused on the content of the interaction. Our goal was
-to figure out what extent the child would actually improve the robot's writing. 
+The CoWriter activity needs a child engaged as interaction leader. 
+In this study we consider the problem of long-term interactions : is it possible to
+sustain this engagement over several one-hour sessions ?
+
+%   \begin{figure}
+%       \centering
+%       \includegraphics[width=0.9\linewidth]{diego_start}
+%       \caption{Homework performed by Diego before the experiment. It gives an
+%       overvew of his starting level in handwriting.}
+%       \label{fig:diego_start}
+%   \end{figure}
+
+%   \begin{figure}
+%       \centering
+%       \includegraphics[width=0.9\linewidth]{3a}
+%       \caption{Letter deformation along an eigenvector. \emph{Left} : the non-deformed
+%           letter (origin of the eigenspace). \emph{Middle} : the actual Diego's
+%           deformation (from figure~\ref{fig:diego_start}). \emph{Right} : exaggerated
+%   deformation along the eigenvector that encode Diego's mistake.} 
+%       \label{fig:3a}
+%   \end{figure}
 
 \subsection{Experimental settings}
-The experiment took one month. It was divided in four sessions of one hour, one session per week.
-In order to justify to the child an activity where a robot wants to learn
-handwriting, we decided to adduce a scenario. There where two Nao robots: a
-blue one (Mimi) and an orange one (Clem). They where introduced to the child as two hold friends. During the first
-three sessions, Mimi was in "mission" : it was exploring a mysterious hidden
+
+The experiment took place in our laboratory. Our goal was to figure out 
+an environment in order to make Diego sustaining
+engagement over four sessions of one hour, one session per week. We decided 
+to introduce an appealing scenario that justifyed to the child the activity 
+where a robot wants to learn handwriting. We used two Nao robots : a blue one 
+(called Mimi) and an orange one (called Clem). Mimi was away for a 
+scientific mission, and the two robots had to communicate by mails. But they decided to do it 
+``like humans", with handwritten messages. While Mimi was good in handwriting, 
+Clem had strong difficulties and needed the help of Diego.
+
+The mission of Mimi consisted in the exploration of a mysterious hidden
 base. Each week, just before the session, it was sending a postal mail contening
-a picture, a curious object it found and a few words about its discoveries. The pictures was representing itself exploring 
+a picture, a curious object it found and a few handwritten words about its discoveries. 
+The pictures was representing itself exploring 
 a dark room of the hidden base (that was actually our laboratory's workshop). 
 The objects where 3D printed. In fact, there where puzzle pieces of a small 3D 
 model of Nao robot but regarding them one by one, it was not easy to guess it.
 
+During the three first session, Clem (the other robot) was waiting for Diego
+with the recieved mail. It let Diego take a look to the picture and the object,
+and then it asked him to read the message.
+Finaly, Diego figured out a response and helped the robot to write it.
+
+The fourth and last session was set as a test: Mimi, the ``explorer'' robot,
+had come back from its mission and it actually challenged Clem in
+front of Diego: \emph{``I don't believe you wrote yourself these nice letters that I
+received! Prove it to me by writing something in front of me!''} This situation
+was meant to evidence the Prot\'eg\'e effect: by judging the other robot's
+handwriting, Mimi would implicitly judge Diego's skills as
+teacher, and in turn, Diego's handwriting.
+
+% -> level increase
+% -> lettres en plastic
 
 %   \begin{figure}
 %       \centering
