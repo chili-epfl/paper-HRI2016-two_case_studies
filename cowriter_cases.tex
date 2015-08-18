@@ -29,7 +29,7 @@
 % if need info about conference :
 %\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
 
-\title{CoWriter : Two case Studies}
+\title{CoWriter : Case Studies}
 
 
 \author{Alexis Jacq$^{1,2}$, S\'everin Lemaignan$^1$, Fernando Garcia$^1$, Pierre Dillenbourg$^1$, Ana Paiva$^2$\\
@@ -102,9 +102,10 @@ From our perspective, Diego is shy and quiet. He suffers from a poor
 self-esteam much more than any actual trouble in writing.
 
 \subsection{Questions}
+
 The CoWriter activity needs a child engaged as interaction leader. 
 In this study we consider the problem of long-term interactions : is it possible to
-sustain this engagement over several one-hour sessions ?
+sustain this engagement over several one-hour sessions?
 
 %   \begin{figure}
 %       \centering
@@ -162,7 +163,7 @@ gradually increased the complexity of Diego's task to keep it challenging and
 interesting (the first week: demonstration of single letters; the second week:
 short words; the third week: a full message -- Figure~\ref{fig:stimuli}).
 
-Dieg had to tell the robot what to write with small plastic letters (visible
+Diego had to tell the robot what to write with small plastic letters (visible
 behind the robot on Figure~\ref{fig:diego}). A third person was here to send
 the formed word to the robot via the computer.
 
@@ -178,6 +179,26 @@ the formed word to the robot via the computer.
 
 
 \subsection{Results}
+Overall, Vincent provided 154 demonstrations to the robot, and he remained
+actively engaged over the four weeks. The story was well accepted by Vincent and
+he seriously engaged into the game. After the first week, he showed good
+confidence to play with the robot and he built affective bonds with the robot
+over the course of the study, as evidenced by some cries on the last session,
+and several letters sent by him to the robot \emph{after} the end of the study
+(one of them 4 months later) to get news. This represents a promising initial
+result: we can effectively keep a child engaged with the robot for a relatively
+long period of time (about 5 hours).
+
+No conclusion can be drawn in terms of actual handwriting remediation: we did
+not design this study to formally assess possible improvements.
+
+However, as pictured on Figure~\ref{fig:stimuli}, Vincent was able to
+significantly improve the robot's skill, and he acknowledged that he had been
+able to help the robot: in that regard, Vincent convinced himself that he was
+``good enough'' at writing to help someone else, and this is likely to have
+positively impacted his self-esteem.
+
+
 
 \section{case 2 : Henry}
 
@@ -212,11 +233,7 @@ no longer relevant with Henry. We just introduced the robot and quickly
 said that it was seeking help to train for a robot handwriting contest.
 
 In order to better fit the work of the therapist, we decided to turn the 
-CoWriter activity to teach numbers to the robot. Build on
-existing iPad applications actually used by occupational therapists (Dawson Toth's \emph{ABC's
-Writer}), we designed an Android application for pre-test and post-test. It consisted in drawing
-numbers with figer following an helping pattern, that becomes more fine with
-levels in order to increase difficulty~\ref{fig:abc-writer}.
+CoWriter activity to teach numbers to the robot.
 
 Since Henry was frequently drawing horizontally-inverted numbers, or even
 unrecognizable allographs, the learning algorithm of the robot was converging to
@@ -232,7 +249,7 @@ refuse as well a good allographs drawn in a wrong order. But in order to reassur
 about the right final allograph's shape, we made the robot able to recognize
 such a drawing, and, when it occured, to tell the child something like :
 \emph{``Oh, this is exactly the shape of the number I want to learn, but can you
-show me how to draw it in the opposite order ?"}
+show me how to draw it in the opposite order?"}
 
 Also, to make sure the robot was going to improve its handwriting
 and to clearly show this improvement, we decided to make it starting
@@ -247,6 +264,53 @@ robot telling a story).
 
 
 \subsection{Results}
+Despite his inattention, Henry was able to keep on the activity during more than
+forty minutes in each session. In total, 55 allographs out of 82 
+provided by the child as demonstration were acceptable by the robot (with a
+progressive improvement from 13 out of 28 in the first session up to 26 out
+of 29 in the last session).
+
+As soon as Thomas understood that the robot was only accepting well-formed
+allographs, he started to focus on it and he would typically draw 5 or 6 times
+the number before actually sending to the robot (the tablet let the children
+clear their drawing and try again before sending it to the robot). According to
+the therapist, it was the first time that Thomas would correct himself in such a
+way, explicitly having to reflect on how \emph{another agent} (the robot) would
+interpret and understand his writing. Figure~\ref{henry_progress} shows how
+he gradually improved his demonstrations for some numbers, according to the
+metric we used to make the robot accepting/refusing trials.
+
+Since the robot's handwriting started from a simple primitive (a stroke), each
+time Thomas succeeded to have his demonstration accepted by it, the robot's
+improvement was clearly visible (as measured in Figure~\ref{henry_distances}).
+This led to a self-rewarding situation that effectively supported Thomas'
+engagement.
+\section{Automatic studies}
+\subsection{Context}
+\subsection{Questions}
+\subsection{Experimental settings}
+\subsection{Results}
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        child & demo & pos & neg & p-value (robot) & p-value (child)\\ \hline
+        valentine & 127 & 24 & 6 & 6.454e-05 & 0.02286\\ \hline
+        enzo & 223 & 20 & 9 & 0.1776 & 0.5780\\ \hline
+        matenzo & 131 & 10 & 3 & 0.0001554 & 0.0006541\\ \hline
+        jonathan & 98 & 10 & 5 &  0.1456 & 0.6640\\ \hline
+        nathan & 115 & 16 & 4 & 3.660e-06 & 0.002705\\ \hline
+        alexandre & 83 & 10 & 3 & 0.008527 & 1.288\\ \hline
+        adele & 35 & 4 & 2 & 0.02145 & 0.01279\\ \hline
+        mona & 40 & 5 & 1 &  1.138 & 0.2351\\ \hline
+    \end{tabular}
+    \caption{results of gradings. demo : number of demonstrations provided by
+        the child over all session. pos : number of positive grades provided by
+        the child. neg : number of negative grades. p-value (robot) : how
+        significant are the grades corresponding to robot's progression. p-value
+    (child) : how significant are the grades corresponding to child's own progression.}
+\end{table}
+
 
 \section{Discussion}
 
