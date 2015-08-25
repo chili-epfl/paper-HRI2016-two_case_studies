@@ -350,8 +350,9 @@ handwriting remediation in children.
 We focused on correlation between children's evaluations and robot's progression.
 We estimated robot's progression as the difference between a starting score
 (score of the first robot's try when children has chosen a new word/letter to
-work on) and the current robot's score (after beeing taught by the child). We call score the average of euclidian
-distance between robot's try and reference allograph over all letter of the
+work on) and the current robot's score (after beeing taught by the child). that
+score is given by the average of euclidian
+distance between robot's try and a reference allograph over all letters of the
 word. Those references for letter allographs where beforehand drawn by
 us, taking inspiration in education.com cursive letters templates
 (http://www.education.com/slideshow/cursive-handwriting-z/). Let $P_i$ be the
@@ -370,7 +371,7 @@ Then we can estimate the p-value $p$ of the actual score: $$ \overline{S} =
 \sum\limits_i{\overline{R}_i P_i}$$ 
 given the distribution of the generated scores $\left(S^n\right)_n$, assumed to
 be gaussian: 
-$$p(\overline{S}) = 1-\phi{\left(\frac{\overline{S}-\mu}{\sigma}\right)}$$
+$$p(\overline{S})= \mathbb{P}{\left[X>\overline{S}\right]} = 1-\phi{\left(\frac{\overline{S}-\mu}{\sigma}\right)}$$
 where $\phi$ denotes the cumulative distribution function of standard normal
 distribution, $\mu$ the mean and $\sigma$ the deviation of the generated 
 scores $\left(S^n\right)_n$. 
@@ -378,7 +379,14 @@ As a result, we found that 5 of the 8 children obtained a score of evaluation
 significantly hight ($p(\overline{S})<0.05$). We reported score of evaluation
 p-values of each child in second-last column of Table~\ref{table:scores}.
 
-
+Then, we also studied correlation between children's evaluations and their own
+progression. We did exactly the same analysis, using distances between children
+demonstrations and reference allographs to compute children progressions.
+Finaly, 3 of those 5 children that played ``seriously" obtained score of evaluation of their own
+progression significantly hight (last column of Table~\ref{table:scores}). For
+those last children, it seems that the robot was reflecting their own performances, and while they
+were judging the robot positively (three times more rewards than punishments)
+they were actualy evaluating themselves.
 
 
 
@@ -387,21 +395,20 @@ p-values of each child in second-last column of Table~\ref{table:scores}.
     \centering
     \begin{tabular}{|c|c|c|c|c|c|}
         \hline
-        child & demo & pos & neg & p-value (robot) & p-value (child)\\ \hline
-        valentine & 127 & 24 & 6 & 6.4e-05 & 2.3e-02\\ \hline
-        enzo & 223 & 20 & 9 & 1.8e-01 & 5.8e-01\\ \hline
-        matenzo & 131 & 10 & 3 & 1.5e-04 & 6.5e-04\\ \hline
-        jonathan & 98 & 10 & 5 &  1.4e-01 & 6.6e-01\\ \hline
-        nathan & 115 & 16 & 4 & 3.6e-06 & 2.7e-03\\ \hline
-        alexandre & 83 & 10 & 3 & 8.5e-03 & 1.3e-00\\ \hline
-        adele & 35 & 4 & 2 & 2.1e-02 & 1.3e-02\\ \hline
-        mona & 40 & 5 & 1 &  1.1e-00 & 2.3e-01\\ \hline
+        child & demo & rew & pun & p(robot) & p(child)\\ \hline
+        valentine & 127 & 24 & 6 & 2.4e-03 & 5.5e-02\\ \hline
+        enzo & 223 & 20 & 9 & 1.7e-01 & 3.5e-01\\ \hline
+        matenzo & 131 & 10 & 3 & 3.8e-03 & 7.9e-03\\ \hline
+        jonathan & 98 & 10 & 5 &  1.5e-01 & 3.8e-01\\ \hline
+        nathan & 115 & 16 & 4 & 5.3e-04 & 2.7e-03\\ \hline
+        alexandre & 83 & 10 & 3 & 3.1e-02 & 6.0e-01\\ \hline
+        adele & 35 & 4 & 2 & 5.0e-02 & 3.7e-02\\ \hline
+        mona & 40 & 5 & 1 &  5.4e-01 & 2.0e-01\\ \hline
     \end{tabular}
     \caption{results of evaluation. demo : number of demonstrations provided by
         the child over all session. rew : number of rewards accorded by
-        the child. pun : number of punishments. p-value (robot) : how
-        significant are the evaluation corresponding to robot's progression. p-value
-    (child) : how significant are the evaluation corresponding to child's own progression.}
+        the child. pun : number of punishments. p(robot) : how
+        significant are the evaluation corresponding to robot's progression. p(child) : how significant are the evaluation corresponding to child's own progression.}
     \label{table:scores}
 \end{table}
 
