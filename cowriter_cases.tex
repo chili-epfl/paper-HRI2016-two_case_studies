@@ -30,7 +30,7 @@
 %\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
 
 \title{CoWriter : Case Studies}
-
+\conferenceinfo{HRI}{'16 Chrischurch, New Zealand.}
 
 \author{Alexis Jacq$^{1,2}$, S\'everin Lemaignan$^1$, Fernando Garcia$^1$, Pierre Dillenbourg$^1$, Ana Paiva$^2$\\
 $^1$CHILI Lab, \'Ecole Polytechnique F\'ed\'erale de Lausanne, Suisse,\\
@@ -60,9 +60,6 @@ $^2$Instituto Superior T\'{e}cnico, University of Lisbon, Portugal}
 %    }
 
 
-\date{date comes here}
-
-
 \maketitle
 \begin{abstract}
 Abstract comes here
@@ -72,9 +69,69 @@ Abstract comes here
 by teaching}
 
 \section{Introduction}
-% -> A new hri field
-% -> What as been done before
-% -> what is new here
+
+Children suffering from difficulties in handwriting integration are more exposed
+to have future troubles in aquisition of other disciplines as they grow up
+\cite{Christensen2005}. 
+The Cowriter activity introduce a new approach to help those children
+\cite{Hood}. While actual successful remediation involve children
+in long intervention (at least 10 weeks) focused on \emph{motor} skills \cite{Hoy2011},
+CoWriter is based on the \emph{learning by teaching} paradigm and aims to repair
+\emph{self-esteem} and \emph{motivation} of the child rather than his
+handwriting performances.
+
+\emph{Learning by teaching} is a technic that engages students to lead an
+activity as teachers in order to improve the learning process. Known to produce
+motivational, meta-cognitive and educational benefits in a range of disciplines~\cite{Rohrbeck2003},
+the application of this paradigm to handwriting intervention remains, however,
+unexplored. One reason for this may be due to the requirement of an
+appropriately unskilled peer for the child to tutor: this may indeed prove
+difficult if the child is the lowest performer in the class.  In some cases, it
+may be appropriate for a peer or teacher to simulate a na\"ive learner for the
+child to teach. For handwriting however, where one's skill level is visually
+evident, this acting is likely to be rapidly detected. This motivates the use of
+an artificial teachable agent which can be configured for a variety of skill
+levels, and for which children do not have preconceptions about its handwriting
+ability.
+
+Robots have been used as teachers or social partners to promote children's
+learning in a range of contexts, most commonly related to language
+skills~\cite{han2010robot}, and less often to physical skills (such as
+calligraphy~\cite{Matsui2013}). Looking at the converse (humans \emph{teaching}
+robots), Werfel notes in~\cite{Werfel2014} that most of the work focuses on the
+robot's benefits (in terms of language~\cite{Saunders2010} or
+physical~\cite{Mulling2013} skills, for example) rather than the learning
+experienced by the human tutor themselves.  Our work concentrates on this latter
+aspect: by demonstrating handwriting to a robot, we aim at improving the
+\emph{child's} performance. Note that our work must be distinguished from
+``learning from demonstration'' approaches to robots learning physical skills,
+as the agent we present is only simulating fine motor skills for interaction
+purposes.
+
+Besides the commitment of the child into the interaction build on the
+``prot\'eg\'e effect'': the teacher feels responsible for his student, commits
+to the student's success and possibly experiences student's failure as his own
+failure to teach. Teachable computer-based agents have previously been used to
+encourage this ``prot\'eg\'e effect'', wherein students invest more effort into
+learning when it is for a teachable agent than for themselves~\cite{Chase2009}.
+We rely on this cognitive mechanism to reinforce the child's commitment into the
+robot-mediated handwriting activity.
+
+Previous experiments with CoWriter were conducted in
+school, involving either group of children doing activity together \cite{Hood} or children
+one by one but during shirt single session (about 10 minutes). Those
+studies have been conducted to evaluate the feasibility and technical soundness
+of the interaction system. Because of group effects and the briefness of
+interactions, no conclusions were possible about any actual ``prot\'eg\'e
+effect''. Subject children where randomly chosen in school
+classes and had no specific difficulties in handwriting. Therefore, it was
+impossible to observe any remediation of self-esteem or motivation.
+
+We present in this
+article our first long-term case studies, conducted to investigate how this new activity
+can really impacts children's self-esteem and motivation.    
+
+
 
 %   \begin{figure}
 %       \centering
@@ -83,15 +140,170 @@ by teaching}
 %       \label{fig:henry}
 %   \end{figure}
 
-\section{The CoWriter activity}
-\subsection{Children teach handwriting to the robot}
-\subsection{Our approach}
+\section{Activity description}
+\subsection{Interaction setup}
+Figure~\ref{experimental_setup} illustrates our general experimental setup: a
+face-to-face child-robot interaction with an (autonomous) Aldebran's {\sc nao}
+robot.
+
+A tactile tablet (with a custom application) is used for both the robot and the
+child to write: during a typical round, the child requests the robot to write
+something (a single letter, a number or a full word), and push the tablet
+towards the robot, the robot writes on the tablet by gesturing the writing (but
+without actually physically touching the tablet), the child then pull back the
+tablet, corrects the robot's attempt by writing him/herself on top or next to
+the robot's writing (see Figure~\ref{fig:diego}), and ``send'' his/her
+demonstration to the robot by pressing a small button on the tablet. The robot
+``learns'' from this demonstration and tries again.
+
+Since the child is assumed to take on the role of the teacher, we had to ensure
+(s)he would be able to manage by him/herself the turn-taking and the overall
+progression of the activity (moving to the next letter or word). In our design,
+the turn-taking relies on the robot prompting for feedback once it is done with
+its writing (simple sentences like ``What do you think?''), and pressing on a
+small robot icon on the tablet once the child has finished correcting. In our
+experiments, both were easy to grasp for children.
+
+
+   \begin{figure}
+       \centering
+       \includegraphics[width=0.6\columnwidth]{experimental_setup}
+       \caption{\small Our experimental setup: face-to-face interaction with a {\sc
+           nao} robot.  The robot writes on the tactile tablet, the child then
+           corrects the robot by directly overwriting its letters on the tablet
+           with a stylus. An adult (either a therapist or an experimenter,
+           depending on the studies), remains next to the child to guide the work
+           (prompting, turn taking, etc.). For some studies, a second tablet and an
+           additional camera (dashed) are employed.}
+
+%       \label{experimental_setup}
+   \end{figure}
+
+Implementing such a system raises several challenges: first, the acquisition,
+analyse and learning from hand-written demonstration, which lays at the core of the
+our approach, necessitates the development of several algorithms for the robot to generate
+initial bad writing and to respond in an adequate manner, showing visible (but
+not too quick) writing improvements.
+
+Then, the actual implementation on the robot requires the coordination of
+several modules (from performing gestures and acquiring the user's input to
+the high-level state machine), spread over several devices (the robot itself,
+one laptop and up to four tactile tablets for certain studies we conducted). We
+relied on ROS to ensure the synchronization and communication between these
+modules.
+
+We detail each of these in the following sections.
 
 \subsection{Learning and generating letters}
+Since our application is about teaching a robot to write, generating (initially
+bad) letters and learning from demonstrations is a core aspect of the project.
 
+The main idea is simple: we arbitrary chose a set of allograph shapes
+that define the initial state of generated letters.
+Then, when the child provide a demonstration of a letter, the algorithm
+generates
+a new letter corresponding to the middle point between the last state and the
+demonstration. 
+
+The first question concernes the construction of the initial set of allographs.
+In previous experiments, we built eigenspace based on principal composent
+analysis (PCA) of a standard dataset of adult 214 letters (the UJI Pen Characters 2 dataset~\cite{Llorens2008}).
+We used the first $n$ eigenvector (in
+our experiments, $3 < n < 6$) of the covariance matrix
+generated from PCA. Then it was easy to create new letter shapes by choosing
+random coordinates close to the origin of the eigenspace. Each eigenvector
+providing the direction of a principal deformation of the allograph in human
+handwriting~\cite{Hood}. But generated ``defaults" of letters were far from
+children deformations: this starting point produced already acceptable writings
+and it was too difficult for children to help the robot.
+Over the following studies, we explored three different ways to generate such
+allographs. In [study case 1] we used homework of the child previously provided
+by his mother to exagerate by hand his main defaults. 
 \subsection{robotic implementation}
 
-\section{case 1 : Diego}
+Our system is embodied in an Aldebaran's {\sc nao} (V4 or V5, depending on the
+studies) humanoid robot. This choice is motivated by its approachable
+design~\cite{Gouaillier2008}, its size (58cm) and inherently safe structure
+(lightweight plastic) making it suitable for close interaction with children,
+its low price (making it closer to what school may afford in the coming years)
+and finally its ease of deployment on the field.
+
+Robotic handwriting requires precise closed-loop control of the arm and hand
+motion. Because of the limited fine motor skills possible with such an
+affordable robot, in addition to the absence of force feedback, we have opted
+for \emph{simulated handwriting}: the robot draws letters in the air, and the
+actual writing is displayed on a synchronised tablet.
+
+\begin{figure}[ht!]
+\centering
+
+\resizebox{1.1\linewidth}{!}{%
+
+\begin{tikzpicture}[
+    >=latex,
+    node distance=2cm,
+    every edge/.style={draw, very thick},
+    redarrow/.style={draw,red, text=black},
+    greenarrow/.style={draw,GreenYellow,text=black},
+    yellowarrow/.style={draw,BurntOrange,text=black},
+    cmpt/.style={draw, align=center, rounded corners, inner sep=5pt, font=\sf, fill=black!20},
+    label/.style={midway, align=left, font=\scriptsize\sf, fill=white, above,opacity=0,text opacity=1}]
+
+    \node at (0,0) (laptop) {\includegraphics[width=2cm]{laptop}};
+    \node[below right=2 of laptop] (nao) {\includegraphics[width=2cm]{nao}};
+    \node[below left=2 of laptop] (tablet) {\includegraphics[width=2cm]{tablet+stylus}};
+    \node[above=2 of laptop] (selection) {\includegraphics[width=2cm]{selection_tablet}};
+
+    \node[draw,above right=2 of laptop,anchor=north west,text width=4cm] (processes)
+    {\sf\scriptsize machine-learning, \\letters/gestures
+    generation, \\interaction supervision};
+    \path (laptop) edge[dashed] (processes);
+
+    \path (nao) edge [->,redarrow, bend left] node[label, auto] {robot state} (laptop);
+    \path (laptop) edge [->,greenarrow, bend left] node[label, auto] {writing gestures} (nao);
+
+    \path (tablet) edge [->,redarrow, bend left] node[label, auto] {demonstrations,\\turn taking} (laptop);
+    \path (laptop) edge [->,redarrow, bend left] node[label,
+    auto=right,align=right]
+    {path of\\ letters to display} (tablet);
+
+    \path (selection) edge [->,redarrow] node[label, auto=right] {letter/word to write} (laptop);
+
+    \path (-5, 2) edge [->, redarrow] node[label] {ROS} ++(1, 0);
+    \path (-5, 2.6) edge [->, greenarrow] node[label] {NaoQI} ++(1, 0);
+    
+\end{tikzpicture}
+}
+
+\caption{\small \textbf{Overview of the system}. In total, the system runs about 10 ROS nodes,
+    distributed over the robot itself, a central laptop and Android tablets.}
+
+    \label{fig:archi}
+\end{figure}
+
+The overall architecture of the system (Figure~\ref{fig:archi}) is therefore
+spread over several devices: the {\sc nao} robot itself, that we address via
+both a ROS API\footnote{The ROS stack for {\sc nao} is available at
+\url{http://wiki.ros.org/nao_robot}.} and the Aldebaran-provided NaoQI API, one
+to four Android tablets (the main tablet is used to print the robot's letter and
+to acquire the children's demonstrations; more tablets have been used in some
+studies, either to let the child input words to be written, or for the
+experimenter to qualitatively annotate the interaction in a synchronized
+fashion), and a central laptop running the machine learning algorithms, the
+robot's handwriting gesture generation and high level control of the activity.
+
+Since the system does not actually require any CPU-intensive process, the laptop
+can be removed and the whole logic run on the robot. Due to the relative
+difficulty to deploy and debug ROS nodes directly on the robot, the laptop
+remains however convenient during the development phase and we kept if during
+our experiments.
+
+Most of the nodes are written in Python, and the whole source code of the
+project is available online\footnote{The primary repository is
+\url{https://github.com/chili-epfl/cowriter_letter_learning}.}
+
+
+\section{case study 1: Diego}
 \subsection{Context}
 Diego is a five years old child. Her mother told us he had difficulties learning
 to write at school, particulary in drawing cursive letters. Before experiments,
@@ -200,7 +412,7 @@ positively impacted his self-esteem.
 
 
 
-\section{case 2 : Henry}
+\section{case study 2 : Henry}
 
 \subsection{Context}
 
@@ -322,10 +534,13 @@ we provided him with allograph's template.
 
 The starting point of the robot's writing was the same for all children: we
 used middle point between simple vertical strokes and letters. For this study,
-we wanted the robot to be only influanced by the demonstrations provided the
+we wanted the robot to be only influanced by the demonstrations provided by the
 child, so we did not projected allographs in an eigenspace. The generated
 trials of the robot where directly the middle way between demonstration and
 last state in cartesian space. 
+
+The robot was programmed to accept all demonstrations, providing the child the
+full responsability of the teaching leader.
 
 We added two buttons on the tablet  interface. One green with a thumb up, and
 one red with a thumb down. Those buttons could be used by children to evaluate the
@@ -386,7 +601,7 @@ Finaly, 3 of those 5 children that played ``seriously" obtained score of evaluat
 progression significantly hight (last column of Table~\ref{table:scores}). For
 those last children, it seems that the robot was reflecting their own performances, and while they
 were judging the robot positively (three times more rewards than punishments)
-they were actualy evaluating themselves.
+they were actually evaluating themselves.
 
 
 
@@ -413,10 +628,10 @@ they were actualy evaluating themselves.
 \end{table}
 
 
-\section{Discussion}
-
-\section{Conclusions}
+\section{Conclusion}
 
 \bibliographystyle{abbrv}
+
 \bibliography{cowriter} 
+
 \end{document}
