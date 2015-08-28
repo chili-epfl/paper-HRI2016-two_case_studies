@@ -217,8 +217,21 @@ handwriting~\cite{Hood}. But generated ``defaults" of letters were far from
 children deformations: this starting point produced already acceptable writings
 and it was too difficult for children to help the robot.
 Over the following studies, we explored three different ways to generate such
-allographs. In [study case 1] we used homework of the child previously provided
-by his mother to exagerate by hand his main defaults. 
+allographs. In our first case study~\ref{diego} we used homework of the child previously provided
+by his mother to exagerate by hand his main defaults. This way, the child was
+going to correct his own kind of mistakes. In the second study~\ref{henry},
+since it was very
+difficult for the child to improve already recognisable allographs, we decided under the
+guidance of his occupational therapist to make the robot starting from simple
+vertical stroke for all letters (round 0 on Figure~\ref{learning_6_demos}). In
+the thrid study~\ref{auto} we chose to use middle point between vertical stroke
+and normal letters as a starting point for the robot. After all those
+experiments, we now have a large database of children writings that could be
+used to generate better eigenspace with PCA. Recurrent neural networks (RNN)
+for handwriting recognition and generation~\ref{DBLP:journals/corr/Graves13}
+could also be used to generate children-like handwriting.
+
+
 \subsection{robotic implementation}
 
 Our system is embodied in an Aldebaran's {\sc nao} (V4 or V5, depending on the
@@ -303,7 +316,7 @@ project is available online\footnote{The primary repository is
 \url{https://github.com/chili-epfl/cowriter_letter_learning}.}
 
 
-\section{case study 1: Diego}
+\section{case study 1: Diego}\label{diego}
 \subsection{Context}
 Diego is a five years old child. Her mother told us he had difficulties learning
 to write at school, particulary in drawing cursive letters. Before experiments,
@@ -412,7 +425,7 @@ positively impacted his self-esteem.
 
 
 
-\section{case study 2 : Henry}
+\section{case study 2 : Henry}\label{henry}
 
 \subsection{Context}
 
@@ -497,7 +510,7 @@ improvement was clearly visible (as measured in Figure~\ref{henry_distances}).
 This led to a self-rewarding situation that effectively supported Thomas'
 engagement.
 
-\section{Automatic studies}
+\section{Automatic studies}\label{auto}
 
 \subsection{Context}
 
