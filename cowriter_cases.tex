@@ -62,7 +62,10 @@ $^2$Instituto Superior T\'{e}cnico, University of Lisbon, Portugal}
 
 \maketitle
 \begin{abstract}
-Abstract comes here
+
+The CoWriter activity engages a child in an active interaction, where he has to
+teach handwriting to a robot. Such an interaction
+
 \end{abstract}
 
 \keywords{robot-supported educative activitiy, handwriting learning, learning
@@ -551,7 +554,7 @@ cursive letters.
 \subsection{Questions}
 
 The main purpose of this study is to test the ergonomy of CoWriter. As we
-introduce the robot, we dont
+introduce the robot, we do not
 provide children with any scenario and give to them minimal explanations. Then
 we see how easily they take the role of the teacher and how seriously they try to help the robot.
 
@@ -607,8 +610,8 @@ us, taking inspiration in education.com cursive letters templates
 estimated progression of the robot at time $ i$. Of course, if the child
 chose to switch to a new word at time $ j$ , we got $ P_{j}=0$ and obviously $
 P_0=0$.
-To mesure how significant a child was rewarding the robot when it was
-progressing, we generated 10000 times the same number of reward/punishment
+To mesure if the fact that the child was rewarding the robot when it was
+progressing was significant or not, we generated 10000 times the same number of reward/punishment
 but accorded at random times. Let $ R_i^n$ be the nth generated evalutation at
 time $ i$ ($ R_i^n = 0$ if
 no evaluation occured at time $ i$ , $ R_i^n=1$ if a reward occured at time
@@ -655,8 +658,10 @@ they were actually evaluating themselves.
     \end{tabular}
     \caption{results of evaluation. demo : number of demonstrations provided by
         the child over all session. rew : number of rewards accorded by
-        the child. pun : number of punishments. p(robot) : how
-        significant are the evaluation corresponding to robot's progression. p(child) : how significant are the evaluation corresponding to child's own progression.}
+        the child. pun : number of punishments. p(robot) : are the evaluations
+        significantly corresponding to the progression of the robot ? p(child) : are the
+        evaluations significantly corresponding to the child's own
+progression ?}
     \label{table:scores}
 \end{table}
 
@@ -667,17 +672,29 @@ with CoWriter activity performed by one child at the time.
 
 We introduced some adaptations of
 the interaction design and the learning algorithm that succeeded to maintain
-children engaged during repetitive long sessions (~45 minutes, 3 or 4 times).
+children engaged during repetitive long sessions (\thicksim 45 minutes, 3 or 4 times).
 Such design of possible long-term interaction provides
 opportunity to study and improve actual impact of human-robot activities as
 education tools.
 
-We showed that a child with real difficulties in handwriting can understand and
-play the activity, and feel that the robot actually learnt from his
-demonstrations.
+The fact that a child with real difficulties in handwriting can easily
+understand the activity and feel that the robot actually learn from his
+demonstrations shows that CoWriter is not only a simple game of interaction with
+a robot, but can have a positive therapeutic impact.
 
-Using evaluation of the robot by children and a mesure of its actual handwriting
-progression, we 
+The evaluation of the robot by the child provided information about his
+understanding of the activity and about how much he was satisfyed by the
+learning process (both the robot's ability to learn and the child's own
+ability to teach). We believe that this information could be taken in account by
+the robot in order to improve the quality of the interaction. As an example, it
+could be used at two levels : (1) it is possible to detect if the child is playing
+seriously or not (a non-serious child may provide unrecognizable drawings and gives good grades to
+the robot while its level decreases), or if the child did not understood the
+activity (if he never uses the evaluation buttons and spend a lot of time to provide
+a resonse). (2) We can simply reinforce the learnt allograph when the robot
+receives a good evaluation, or make it forget the allograph when it
+receives a bad evaluation.
+
 \bibliographystyle{abbrv}
 
 \bibliography{cowriter} 
