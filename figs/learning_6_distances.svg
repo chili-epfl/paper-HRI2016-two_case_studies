@@ -43,12 +43,12 @@
      id="namedview853"
      showgrid="false"
      inkscape:zoom="1.2085833"
-     inkscape:cx="304.13468"
+     inkscape:cx="165.12895"
      inkscape:cy="380.19721"
      inkscape:window-x="65"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
-     inkscape:current-layer="matplotlib.axis_2"
+     inkscape:current-layer="axes_1"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
@@ -1354,16 +1354,16 @@
         <text
            xml:space="preserve"
            style="font-style:normal;font-weight:normal;font-size:16.22928238px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-           x="-294.68304"
-           y="66.64267"
+           x="-316.211"
+           y="67.293961"
            id="text22744"
            sodipodi:linespacing="125%"
            transform="matrix(0,-0.98392173,1.016341,0,0,0)"><tspan
              sodipodi:role="line"
              id="tspan22746"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32.45856476px;font-family:cmr10;-inkscape-font-specification:cmr10;stroke-linecap:butt;stroke-linejoin:round"
-             x="-294.68304"
-             y="66.64267">in Eigenspace</tspan></text>
+             x="-316.211"
+             y="67.293961">in PCA subspace</tspan></text>
         <text
            transform="matrix(0,-0.95149199,1.050981,0,0,0)"
            sodipodi:linespacing="125%"
