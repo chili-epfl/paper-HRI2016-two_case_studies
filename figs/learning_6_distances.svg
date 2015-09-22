@@ -16,7 +16,7 @@
    width="709.02466pt"
    id="svg2"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="leraning_6_distances.svg">
+   sodipodi:docname="learning_6_distances.svg">
   <metadata
      id="metadata855">
     <rdf:RDF>
@@ -25,7 +25,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -38,17 +38,17 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1600"
-     inkscape:window-height="838"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
      id="namedview853"
      showgrid="false"
-     inkscape:zoom="0.52885154"
-     inkscape:cx="492.64963"
-     inkscape:cy="412.25951"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:zoom="1.2085833"
+     inkscape:cx="304.13468"
+     inkscape:cy="380.19721"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg2"
+     inkscape:current-layer="matplotlib.axis_2"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
@@ -864,16 +864,17 @@
         </g>
         <text
            xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:16px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-           x="423.54178"
-           y="362.1629"
+           style="font-style:normal;font-weight:normal;font-size:25.95802879px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="379.01575"
+           y="374.92319"
            id="text22722"
-           sodipodi:linespacing="125%"><tspan
+           sodipodi:linespacing="125%"
+           transform="scale(1.02245,0.97804292)"><tspan
              sodipodi:role="line"
              id="tspan22724"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:cmr10;-inkscape-font-specification:cmr10;stroke-linecap:butt;stroke-linejoin:round"
-             x="423.54178"
-             y="362.1629">rounds</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.95802879px;font-family:cmr10;-inkscape-font-specification:cmr10;stroke-linecap:butt;stroke-linejoin:round"
+             x="379.01575"
+             y="374.92319">rounds</tspan></text>
       </g>
       <g
          id="matplotlib.axis_2"
@@ -1352,30 +1353,43 @@
         </g>
         <text
            xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:8px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-           x="-309.31274"
-           y="61.30336"
+           style="font-style:normal;font-weight:normal;font-size:16.22928238px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="-294.68304"
+           y="66.64267"
            id="text22744"
            sodipodi:linespacing="125%"
-           transform="matrix(0,-1,1,0,0,0)"><tspan
+           transform="matrix(0,-0.98392173,1.016341,0,0,0)"><tspan
              sodipodi:role="line"
              id="tspan22746"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:cmr10;-inkscape-font-specification:cmr10;stroke-linecap:butt;stroke-linejoin:round"
-             x="-309.31274"
-             y="61.30336">Euclidian distance in Eigenspace</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32.45856476px;font-family:cmr10;-inkscape-font-specification:cmr10;stroke-linecap:butt;stroke-linejoin:round"
+             x="-294.68304"
+             y="66.64267">in Eigenspace</tspan></text>
         <text
-           transform="matrix(0,-1,1,0,0,0)"
+           transform="matrix(0,-0.95149199,1.050981,0,0,0)"
            sodipodi:linespacing="125%"
            id="text22748"
-           y="63.442657"
-           x="-643.04315"
-           style="font-style:normal;font-weight:normal;font-size:8px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           y="18.750231"
+           x="-544.23859"
+           style="font-style:normal;font-weight:normal;font-size:18.01717567px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            xml:space="preserve"><tspan
-             y="63.442657"
-             x="-643.04315"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:cmr10;-inkscape-font-specification:cmr10;stroke-linecap:butt;stroke-linejoin:round"
+             y="18.750231"
+             x="-544.23859"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:36.03435135px;font-family:cmr10;-inkscape-font-specification:cmr10;stroke-linecap:butt;stroke-linejoin:round"
              id="tspan22750"
-             sodipodi:role="line">Euclidian distance in cartesian space</tspan></text>
+             sodipodi:role="line">Euclidian distance</tspan></text>
+        <text
+           transform="matrix(0,-0.88978746,1.1238639,0,0,0)"
+           sodipodi:linespacing="125%"
+           id="text22748-6"
+           y="61.802395"
+           x="-698.07623"
+           style="font-style:normal;font-weight:normal;font-size:16.161623px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             y="61.802395"
+             x="-698.07623"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32.323246px;font-family:cmr10;-inkscape-font-specification:cmr10;stroke-linecap:butt;stroke-linejoin:round"
+             id="tspan22750-3"
+             sodipodi:role="line">in cartesian space</tspan></text>
       </g>
     </g>
     <g
@@ -1957,16 +1971,17 @@
         </g>
         <text
            xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:16px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-           x="410.754"
-           y="674.00085"
+           style="font-style:normal;font-weight:normal;font-size:27.24694824px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="386.23727"
+           y="680.02618"
            id="text22722-7"
-           sodipodi:linespacing="125%"><tspan
+           sodipodi:linespacing="125%"
+           transform="scale(0.999313,1.0006875)"><tspan
              sodipodi:role="line"
              id="tspan22724-3"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:cmr10;-inkscape-font-specification:cmr10;stroke-linecap:butt;stroke-linejoin:round"
-             x="410.754"
-             y="674.00085">rounds</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.24694824px;font-family:cmr10;-inkscape-font-specification:cmr10;stroke-linecap:butt;stroke-linejoin:round"
+             x="386.23727"
+             y="680.02618">rounds</tspan></text>
       </g>
       <g
          id="matplotlib.axis_4"
