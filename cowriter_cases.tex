@@ -29,7 +29,7 @@
 % if need info about conference :
 %\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
 
-\title{CoWriter : Case Studies}
+\title{Building successful long child-robot interactions in a learning context}
 \conferenceinfo{HRI}{'16 Chrischurch, New Zealand.}
 
 \author{Alexis Jacq$^{1,2}$, S\'everin Lemaignan$^1$, Fernando Garcia$^1$, Pierre Dillenbourg$^1$, Ana Paiva$^2$\\
@@ -89,7 +89,7 @@ The Cowriter activity introduces a new approach to help those children
 \cite{Hood}. While common successful interventions involve children
 in long intervention (at least 10 weeks) focused on \emph{motor} skills \cite{Hoy2011},
 CoWriter is based on \emph{learning by teaching} paradigm and aims to repair
-self-esteem and motivation of the child rather than his handwriting performance alone.
+self-confidence and motivation of the child rather than his handwriting performance alone.
 
 \emph{Learning by teaching} is a technique that engages students to conduct the activity in the role of the teachers in order to support their learning process. This 
 paradigm is known to produce motivational, meta-cognitive and educational
@@ -136,20 +136,18 @@ together and which algorithms are used to learn and generate robot's letters.
 The following three parts report our three experiments and results. Two case studies specifically designed to be adapted to one child; one introduces a general design conducted with 8 children separately. 
 
 
-%\section{related works}
-%
-%Robots have already been used as a social partner in educative
-%contexts. Lots of such studies have been conduced for language skills
-%acquisition~\cite{han2010robot}, and less often to physical skills (such as
-%calligraphy~\cite{Matsui2013}). Regarding learning by teaching paradigm with
-%robots, Werfel notes in~\cite{Werfel2014} that studies tends to focus on the
-%ability of the robots to learn (in terms of language~\cite{Saunders2010} or
-%physical~\cite{Mulling2013} skills, for example) rather than the beneficial impact
-%on the teaching humans. On the contrary, our work minimized the robot's skills
-%(the robot simulates a fuzzy gesture and does not learn any physical
-%movement, and just computes the allograph shape of learned letters). We
-%concentrated on the possible improvement of children self-esteem and
-%motivation promoted by the behavior of the robot.
+\section{related works}
+
+Robots have already been used as a social partner in educational
+contexts. Lots of studies have been conduced with language skills
+acquisition~\cite{han2010robot}, less often involving physical skills (such as
+calligraphy~\cite{Matsui2013}). Regarding \textit{learning by teaching} paradigm with
+robots, Werfel notes in~\cite{Werfel2014} that studies tend to focus on the
+ability of the robots to learn (in terms of language~\cite{Saunders2010} or
+physical~\cite{Mulling2013} skills, for example) rather than the beneficial impact
+on the teaching for the human. To contrary, our work minimized the robot's skills while we
+concentrate on the possible improvement of children self-confidence and
+motivation promoted by the behaviour of the robot.
 
 %   \begin{figure}
 %       \centering
@@ -165,22 +163,21 @@ face-to-face child-robot interaction with an (autonomous) Aldebaran's {\sc nao}
 robot.
 
 A tactile tablet (with a custom application) is used by both the robot and the
-child to write: during a typical round, the child requests the robot to write
+child to write: in each turn, the child requests the robot to write
 something (a single letter, a number or a full word), and pushes the tablet
 towards the robot, the robot writes on the tablet by gesturing the writing (but
-without actually physically touching the tablet), the child then pulls back the
-tablet, corrects the robot's attempt by writing him/herself on top or next to
-the robot's writing (see Figure~\ref{fig:Vincent}), and ``sends'' his/her
+without actually physically touching the tablet). The child then pulls back the
+tablet, corrects the robot's attempt by writing himself on top or next to
+the robot's writing (see Figure~\ref{fig:Vincent}), and ``sends'' his
 demonstration to the robot by pressing a small button on the tablet. The robot
-``learns'' from this demonstration and tries again.
+learns from this demonstration and tries again.
 
 Since the child is assumed to take on the role of the teacher, we had to ensure
-(s)he would be able to manage by him/herself the turn-taking and the overall
+he would be able to manage by himself the turn-taking and the overall
 progression of the activity (moving to the next letter or word). In our design,
 the turn-taking relies on the robot prompting for feedback once it is done with
 its writing (simple sentences like ``What do you think?''), and pressing on a
-small robot icon on the tablet once the child has finished correcting. In our
-experiments, both were easy to grasp for children.
+small robot icon on the tablet once the child has finished correcting. We found that both approaches were easy to grasp for children.
 
 
    \begin{figure}
@@ -197,29 +194,27 @@ experiments, both were easy to grasp for children.
        \label{experimental_setup}
    \end{figure}
 
-\subsection{Learning and generating letters}
-Since our application is about teaching a robot to write, generating (initially
+\subsection{Generating and learning letters}
+Since our approach is based on teaching a robot to write, generating (initially
 bad) letters and learning from demonstrations is a core aspect of the project.
-The initial state of the robot and his ability to make obvious the way he learn
-from demonstrations of the child is the key to land credibility to our
-activity and to motivate the child to help the robot. 
+The initial state of the robot and his ability to learn in an obvious way
+from demonstrations of the child is the key to lend credibility to the activity and to induce the ``prot\'eg\'e" effect.
 
 The technical idea is simple: allographs of letters are encoded as a sequence of 70 points in
-2D-space and can be seen as vectors with 140 coordinates
-($x_1,x_2,x_3,...,y_1,y_2,y_3,...$). We arbitrary chose a set of allograph shapes
+2D-space and can be seen as vectors with 140 elements
+($x_1,...,x_{70},\hspace{1mm}y_1,...,y_{70}$). We arbitrary chose a set of allograph
 that define the initial state of generated letters. 
-Then, when the child provide a demonstration of a letter, the algorithm
-generates
-a new letter corresponding to the middle point between the last state and the
-demonstration. In the following sections, we show our different ideas to
-create the initial state, and how we played with
-different metrics to compute the middle point between the state of the robot and
-the demonstration of the child as hypothesis tested through our three
-experiments. 
+After the child provided a demonstration of a letter, the algorithm
+generates a new letter corresponding to the middle point between the last state and the
+demonstration. 
 
-\subsubsection{different approaches to generate initial allographs}
-The first question concerns the construction of the initial set of allographs.
-In previous experiments, we built a subspace based on principal component
+In the following sections, we present various techniques to
+create the initial state, and different metrics used to compute progression of the robot, tested as hypothesis within our three experiments. 
+
+\subsubsection{Generation of initial allographs}
+The first question relates to the construction of the initial set of allographs.
+% j'en suis là !!!
+In previous experiments presented in~\cite{hood2015when}, we built a subspace based on principal component
 analysis (PCA) of a standard dataset of adult 214 letters (the UJI Pen Characters 2 dataset~\cite{Llorens2008}).
 We used the first $n$ eigenvectors (in
 our experiments, $3 < n < 6$) of the covariance matrix
