@@ -412,7 +412,7 @@ The fourth and last session was set as a test: Mimi, the ``explorer'' robot,
 came back from its mission and challenged Clem in
 front of Vincent: \emph{``I don't believe you wrote yourself these nice letters that I
 received! Prove it to me by writing something in front of me!''} This situation
-was meant to evidence the prot\'eg\'e effect: by judging the other robot's
+was meant to confirm the prot\'eg\'e effect: by judging the other robot's
 handwriting, Mimi would implicitly judge Vincent's skills as
 teacher, and in turn, Vincent's handwriting.
 
@@ -486,34 +486,33 @@ a positive impact on his self-esteem.
 
 Thomas, 5.5 years old child, is under the care of an occupational
 therapist. He has been diagnosed with visuo-constructive deficits.
-As an effect in writing activities, he was frequently performing random attempts and then was comparing
-with the provided template. What is more, Thomas is restless and careless: he
+He was frequently performing random attempts and then was comparing
+with the provided template. Thomas is restless and careless: he
 rarely pays attention to
 advice, even to what he is doing when he is currently drawing, and he is
 quickly shifting his attention from one activity to another.
 
-Thomas was working on number's allographs with his therapist. During a prior
+Thomas was working on number allographs with his therapist. During a prior
 meeting, the therapist provided us with a sequence of numbers
-written by Thomas~\ref{fig:Thomas_numbers}. Thomas was sometime drawing
+written by Thomas. one of the observed problems was drawing
 horizontally-inverted allographs, mainly for ``5".
 
 \subsection{Questions}
 This study focuses on technical adaptations of the CoWriter activity for a 
-child diagnosed with real writing deficits.
+child diagnosed with writing deficits.
 Our objective is to investigate small modifications of the activity adapted to
-the troubles of Thomas (visuo-constructive deficits and inattention) in order to
-maintain him focused
-on the activity during forty-minutes sessions, and to make the robot
-evidently learning from his demonstrations.
+Thomas problems (visuo-constructive deficits and inattention) in order to
+keep him focused
+on the activity during forty-minutes sessions, and to evidence to the child that the robot is progressing by dint of his demonstrations. 
 
 \subsection{Experimental settings}
-The experiment was conducted in the therapist's surgery  (four sessions 
+The experiment was conducted in the therapist's office (four sessions 
 spanning over 5 weeks). We assumed that a scenario like the one we used 
-for Vincent was no longer relevant with Thomas. We just introduced the robot 
+for Vincent would not be usable with Thomas. We just introduced the robot 
 and quickly said that it was seeking help to train for a robot handwriting contest.
 
 In order to integrate our work with that of the therapist, we decided to adapt the 
-CoWriter activity to teach numbers to the robot.
+CoWriter activity to work with numbers.
 
 Since Thomas was frequently drawing horizontally-inverted numbers, or even
 unrecognisable allographs, the learning algorithm of the robot was converging to
@@ -527,9 +526,9 @@ a number if it was always done is the same order, \emph{e.g.} if the ``5" was al
 drawn from the top-right tip down to bottom. Therefore we programmed the robot to
 refuse as well a good allograph drawn in a wrong order. But in order to reassure Thomas
 about the right final allograph's shape, we made the robot able to recognize
-such a drawing, and, when it occurred, to tell the child something like:
+such a drawing, and, when it occurred, to use the phrase:
 \emph{``Oh, this is exactly the shape of the number I want to learn, but can you
-show me how to draw it in the opposite order?"}
+show me how to draw it in the opposite direction?"}
 
 Also, to make
 the robot's progresses evident, we modified the initialization step of the
@@ -538,8 +537,7 @@ deformed number (round 0 on Figure~\ref{learning_6_demos}).
 
 In this setup, we added a second tablet with one button per number. It was used
 by the child to chose a new number to teach to the robot. It also provided the
-possibility to enter letters or words, and to switch to another activity (the
-robot telling a story).
+possibility to enter letters or words, and to switch to another activity (robot telling a story if the child needs a short break).
 
 \begin{figure}
     \centering
@@ -553,21 +551,21 @@ process of the robot.}
 \end{figure}
 
 \subsection{Results}
-Despite his inattention, Thomas was able to remain engaged in the activity during more than
+Despite his attention deficit, Thomas was able to remain engaged in the activity during more than
 forty minutes in each session. In total, 55 allographs out of 82 
-provided by the child as demonstration were acceptable by the robot (with a
+demonstrated by the child were acceptable considering our threshold (with a
 progressive improvement from 13 out of 28 in the first session up to 26 out
 of 29 in the last session).
 
 As soon as Thomas understood that the robot was only accepting well-formed
 allographs, he started to focus on it and he would typically draw 5 or 6 times
 the number before actually sending to the robot (the tablet lets children
-clear their drawing and try again before sending it to the robot). According to
+clear their drawing and try again before sending it). According to
 the therapist, it was the first time that Thomas would correct himself in such a
 way, explicitly having to reflect on how \emph{another agent} (the robot) would
 interpret and understand his writing. Figure~\ref{Thomas_progress} shows how
 he gradually improved his demonstrations for some numbers, according to the
-metric we used to make the robot accept/refuse trials.
+metric we used to make the robot accept/refuse samples.
 
 Since the robot's handwriting started from a simple primitive (a stroke), each
 time Thomas succeeded to have his demonstration accepted by it, the robot's
@@ -609,13 +607,13 @@ pictured on Figure~\ref{Thomas_demos}.}
     \label{Thomas_progress}
 \end{figure}
 
-\section{Automatic studies}\label{auto}
+\section{Case study 3: when children evaluate the robot}\label{auto}
 
 \subsection{Context}
 
-The previous studies were adapted to children : we used a special
-design for each case in order to sustain the child's engagement in the study.
-This time, we conducted case studies with eight children trough a unique
+Each of previous studies was adapted to individual subjects : we used a special
+design for each case in order to sustain the child's engagement.
+In our next experiment, we conducted case studies with eight children using a single
 design. Those children have in common difficulties to learn
 cursive writing but the natures and intensities of those troubles are radically
 different from one child to another. Valentine (7 years old), Alexandre (6.5) and
@@ -624,65 +622,55 @@ occupational therapist. Enzo (8) and Matenzo (7) are repeating their school year
 because of writing. Mona (6) and Adele (8) are bottom of their respective
 classes in writing activities. Nathan (7) is under the care of a neurologist, and
 has been diagnosed with specific language impairment. All of those children are
-expected, given their school level, to have in mind the allographs of
+expected, given their school level, to know the allographs of
 cursive letters. 
 
 \subsection{Questions}
 
-The main purpose of this study is to test the ergonomic aspects of CoWriter. As we
-introduce the robot, we do not
-provide children with any scenario and give to them minimal explanations. Then
-we see how easily they take the role of the teacher and how seriously they try to help the robot.
+The main purpose of this study is to test the ergonomic aspects of CoWriter. When introducing the robot, we did not
+provide scenario and gave to children minimal explanations. We then observed how easily children assumed the role of the teacher and how seriously they tried to help the robot.
 
 \subsection{Experimental settings}
 
 This experiment took place in the coffee room of a therapists shared surgery
 in Normandy, France. Over two weeks, each child came three time for one-hour
-session, except Adele and Mona who did just one session. A facilitator was here
-just to explain the rules of the game and tablet usage. As for Thomas, the child
-had two tablets : one to choose a word (or a single letter) to teach, and one
-used by both the child and the robot to write. Sometimes, if the child asked for,
-we provided him with allograph's template. 
+session, except Adele and Mona who did just one session. A facilitator was present to explain the rules of the game and tablet usage. As in the previous experiment, children were provided with two tablets : one to choose a word (or a single letter) to teach, and one
+used by both the child and the robot to write. We also provided the allograph's template if the child asked for. 
 
 The starting point of the robot's writing was the same for all children: we
 used middle point between simple vertical strokes and letters. For this study,
 we wanted the robot to be only influenced by the demonstrations provided by the
-child, so we did not project allographs in a subspace. The generated
-trials of the robot were directly the middle way between demonstration and
+child, so we did not project allographs in a subspace. The new generated
+sample by the robot were calculated as the middle way between demonstration and
 last state in Cartesian space. 
 
 The robot was programmed to accept all demonstrations, giving to the child the
-full responsibility of the teaching leader.
+full responsibility of the teacher.
 
-We added two buttons on the tablet  interface. a green one with a thumb up, and
-a red one with a thumb down. Those buttons could be used by children to evaluate the
+We added two buttons on the tablet  interface: a green one with a ``thumbs up", and
+a red one with a ``thumbs down". Those buttons could be used by children to evaluate the
 robot (the green one was for rewards while the red one was for punishment). This
 way, we could measure the perception of the robot by the child: the more the
 child used evaluation buttons, the more he was playing the teacher, judging the
-robot instead of himself. It becomes possible to estimate if a child is playing
+robot instead of himself. It became possible to estimate if a child is playing
 seriously given correlation between his evaluation and robot's actual
 progression.
 
 
 \subsection{Results}
 
-All children maintained their engagement during the full sessions. They provided
+All children maintained their engagement during the whole sessions. They provided
 on average 42 demonstrations per session. All children used evaluation buttons and
-had preference to reward the robot (at the end, 99 rewards were accorded to the
-robot for 33 punishments). 
+had preference to reward the robot (in total, 99 rewards and 33 punishments were recorded). 
 
 Since sessions took place over only two weeks, we did not studied possible
-handwriting remediation in children. 
-
-We focused on correlation between the children's evaluations and the robot's progression.
+handwriting remediation in children, but we focused on correlation between the children's evaluations and the robot's progression.
 We estimated the robot's progression as the difference between a starting score
 (score of the first robot's try when children have chosen a new word/letter to
-work on) and the current robot's score (after being taught by the child). that
-score is given by the average of euclidean
+work on) and the current robot's score (after being taught by the child). The
+score is calculated as the average of euclidean
 distance between robot's try and a reference allograph over all letters of the
-word. Those references for letter allographs where drawn by
-us beforehand, taking inspiration in education.com cursive letters templates
-(\url{http://www.education.com/slideshow/cursive-handwriting-z/}). Let $P_i$ be the
+word. Those references for letter allographs where drawn by us beforehand, taking inspiration in education.com cursive letters template\footnote{\url{http://www.education.com/slideshow/cursive-handwriting-z/}}. Let $P_i$ be the
 estimated progression of the robot at time $ i$. Of course, if the child
 chose to switch to a new word at time $ j$ , we have $ P_{j}=0$ and clearly $
 P_0=0$.
@@ -696,22 +684,22 @@ actual evaluation at time $i$. For each $n^{th}$ generated sequence of evaluatio
 compute a score of evaluation: $$ S^n = \sum\limits_i{R_i^n P_i}$$ 
 Then we can estimate the p-value $p$ of the actual score: $$ \overline{S} =
 \sum\limits_i{\overline{R}_i P_i}$$ 
-given the distribution of the generated scores $\left(S^n\right)_n$, assumed to
+given the distribution of the generated scores $\left(S^n\right)_n$, which is assumed to
 be Gaussian: 
 $$p(\overline{S})= \mathbb{P}{\left[X>\overline{S}\right]} = 1-\phi{\left(\frac{\overline{S}-\mu}{\sigma}\right)}$$
 where $\phi$ denotes the cumulative distribution function of the standard normal
 distribution, $\mu$ the mean and $\sigma$ the deviation of the generated 
 scores $\left(S^n\right)_n$. 
 As a result, we found that 5 of the 8 children obtained a score of evaluation
-significantly hight ($p(\overline{S})<0.05$). We reported score of evaluation
-p-values of each child in the second-to-last column of Table~\ref{table:scores}.
+significantly hight ($p(\overline{S})<0.05$). Score of evaluation
+p-values of each child is reported in the second-to-last column of Table~\ref{table:scores}.
 
-Then, we also studied correlation between children's evaluations and their own
-progression. We did exactly the same analysis, using distances between children
+We also studied correlation between children's evaluations and their own
+progression. The analysis was conducted in the same way, using distances between children
 demonstrations and reference allographs to compute children progressions.
-Finally, 3 of those 5 children that played ``seriously" obtained score of evaluation of their own
-progression significantly hight (last column of Table~\ref{table:scores}). For
-those last children, it seems that the robot was reflecting their own performances, and while they
+3 of 5 children that played ``seriously" obtained score of evaluation of their own
+progression significantly high (last column of Table~\ref{table:scores}). For
+those children, it seems that the robot was reflecting their own performances, and while they
 were judging the robot positively (three times more rewards than punishments)
 they were actually evaluating themselves.
 
@@ -743,14 +731,14 @@ progression ?}
 
 
 \section{Conclusion}
-Those studies provide the first results of long-term experiments 
+This paper provides the first results of long-term experiments 
 with CoWriter activity performed by one child at the time. 
 
 We introduced some adaptations of
 the interaction design and the learning algorithm that succeeded in keeping
 children engaged during repetitive long sessions ($\thicksim$ 45 minutes, 3 or 4 times).
-Such design of possible long-term interaction provides
-opportunity to study and improve actual impact of human-robot activities as
+These designs of long-term interactions provide
+opportunities for studying and improving actual impact of human-robot activities as
 education tools.
 
 The fact that a child with real difficulties in handwriting can easily
@@ -758,15 +746,15 @@ understand the activity and feel that the robot actually learns from his
 demonstrations reveals that CoWriter could have a positive therapeutic impact.
 
 The evaluation of the robot by the child provided information about his
-understanding of the activity and about how much he was satisfied by the
+understanding of the activity and how much he was satisfied with the
 learning process (both the robot's ability to learn and the child's own
 ability to teach). We believe that this information could be taken into account by
 the robot in order to improve the quality of the interaction. As an example, it
-could be used at two levels : (1) it is possible to detect if the child is playing
+could be used at two levels: $\bullet$ it is possible to detect if the child is playing
 seriously or not (a non-serious child may provide unrecognisable drawings and gives good grades to
 the robot while its level decreases), or if the child did not understand the
 activity (if he never uses the evaluation buttons and spends a lot of time to
-give a response). (2) We can simply reinforce the learnt allograph when the robot
+give a response). $\bullet$ We can reinforce the learnt allograph when the robot
 receives a good evaluation, or make it forget the allograph when it
 receives a bad evaluation.
 
