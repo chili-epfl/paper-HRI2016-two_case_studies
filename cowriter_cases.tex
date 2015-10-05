@@ -5,6 +5,8 @@
 \usepackage{paralist}
 \usepackage[]{algorithm2e}
 \usepackage{hyperref}
+\usepackage{comment} %for anonymized version everything removed for anonymization is in \excludecomment{}
+
 
 \usepackage{url}
 \usepackage{booktabs}
@@ -32,9 +34,10 @@
 \title{Building successful long child-robot interactions in a learning context}
 \conferenceinfo{HRI}{'16 Chrischurch, New Zealand.}
 
-\author{Alexis Jacq$^{1,2}$, S\'everin Lemaignan$^1$, Fernando Garcia$^1$, Pierre Dillenbourg$^1$, Ana Paiva$^2$\\
-$^1$CHILI Lab, \'Ecole Polytechnique F\'ed\'erale de Lausanne, Switzerland,\\
-$^2$Instituto Superior T\'{e}cnico, University of Lisbon, Portugal}
+\author{\# \# \#}
+%\author{Alexis Jacq$^{1,2}$, S\'everin Lemaignan$^1$, Fernando Garcia$^1$, Pierre Dillenbourg$^1$, Ana Paiva$^2$\\
+%$^1$CHILI Lab, \'Ecole Polytechnique F\'ed\'erale de Lausanne, Switzerland,\\
+%$^2$Instituto Superior T\'{e}cnico, University of Lisbon, Portugal}
 
 
 %   \author{
@@ -63,7 +66,7 @@ $^2$Instituto Superior T\'{e}cnico, University of Lisbon, Portugal}
 \maketitle
 \begin{abstract}
 
-The CoWriter activity involves a child in a rich and complex interaction where he has to
+The\excludecomment{CoWriter} activity involves a child in a rich and complex interaction where he has to
 teach handwriting to a robot. The robot must convince the child it needs his help and it
 actually learns from his lessons. To keep the child engaged, 
 the robot must learn at the right rate, not too fast otherwise the kid will have
@@ -85,7 +88,7 @@ a feeling of handicap in handwriting.
 Children facing difficulties in handwriting integration are more exposed
 to troubles during the acquisition of other disciplines as they grow up
 \cite{Christensen2005}. 
-The Cowriter activity introduces a new approach to help those children
+The \excludecomment{CoWriter} activity introduces a new approach to help those children
 \cite{Hood}. While common successful interventions involve children
 in long intervention (at least 10 weeks) focused on \emph{motor} skills \cite{Hoy2011},
 CoWriter is based on \emph{learning by teaching} paradigm and aims to repair
@@ -93,7 +96,7 @@ self-confidence and motivation of the child rather than his handwriting performa
 
 \emph{Learning by teaching} is a technique that engages students to conduct the activity in the role of the teachers in order to support their learning process. This 
 paradigm is known to produce motivational, meta-cognitive and educational
-benefits in a range of disciplines~\cite{Rohrbeck2003}. The CoWriter project
+benefits in a range of disciplines~\cite{Rohrbeck2003}. The\excludecomment{CoWriter} project
 is the first application of learning by teaching approach to handwriting. 
 
 The effectiveness of our learning by teaching activity is build on the
@@ -104,6 +107,9 @@ encourage this ``prot\'eg\'e effect'', where students invest more effort into
 learning when it is for the benefit of a teachable agent than for themselves~\cite{Chase2009}.
 We rely on this cognitive mechanism to reinforce the child's commitment into the
 robot-mediated handwriting activity.
+
+Concerning learning non-physical skills, the prot\'eg\'e effect have been used in the past by computer-based agents \cite{Chase2009}.
+However, when learning physical skills, robotic partners have been showed to increase users' compliance with the tasks \cite{Bainbridge2011}.
 
 Many studies have been conduced with language skills
 acquisition~\cite{han2010robot}, less often involving physical skills (such as
@@ -123,7 +129,7 @@ the child will engage in the interaction. Two important technical aspects of
 credibility are: how to generate the initial state of the robot, and how to design its
 learning behavior. In our previous work~\cite{hood2015when}, we used a limited approach in which
 letters had to be written as a single stroke (no pen lifting) and that covered
-typical mistakes of adults extracted from an handwritten letters database. Experiments with CoWriter were conducted in school, involving either group of
+typical mistakes of adults extracted from an handwritten letters database. Experiments with\excludecomment{CoWriter} were conducted in school, involving either group of
 children doing the activity together or children
 in short individual sessions.
 
@@ -139,7 +145,7 @@ technical limitations of robot's letter learning and generation, and we introduc
 Through three experiments, we involved children with real difficulties or low 
 self-esteem in repeated long sessions (four times about one hour). We used different
 measures, both qualitative and quantitative, to express the impact of those
-interaction with the CoWriter robot on the child.
+interaction with the\excludecomment{CoWriter} robot on the child.
 
 This article consists of four sections. In the first section we give technical details of our setup, such as how are connected the different modules
 together and which algorithms are used to learn and generate robot's letters.
@@ -263,7 +269,7 @@ In other studies, we decided to put aside the PCA approach and to always use the
 have a better control over the convergence of the robot tries to the demonstrations.
 
 
-\subsection{robotic implementation}
+\subsection{Robotic Implementation}
 
 The actual implementation on the robot requires the coordination of
 several modules (from performing gestures and acquiring the user's input to
@@ -349,8 +355,9 @@ remains however convenient during the development phase and we kept using it in
 our experiments.
 
 Most of the nodes are written in Python, and the whole source code of the
-project is available online\footnote{The primary repository is\\ 
-\url{https://github.com/chili-epfl/cowriter_letter_learning}.}.
+project will be made \excludecomment{is}available online\footnote{The primary repository is\\ 
+	\textit{Anonymized URL}.}.
+%\url{https://github.com/chili-epfl/cowriter_letter_learning}.}.
 
 
 \section{case study 1: Vincent}\label{Vincent}
@@ -359,7 +366,7 @@ Vincent is a five year-old child. At school, he had difficulties to learn writin
 
 \subsection{Questions}
 
-The CoWriter activity needs a child engaged as interaction leader. 
+The\excludecomment{CoWriter} activity needs a child engaged as interaction leader. 
 With this study we consider the problem of long-term interactions: is it possible to
 sustain this engagement over several one-hour sessions?
 
@@ -494,7 +501,7 @@ written by Thomas. one of the observed problems was drawing
 horizontally-inverted allographs, mainly for ``5".
 
 \subsection{Questions}
-This study focuses on technical adaptations of the CoWriter activity for a 
+This study focuses on technical adaptations of the\excludecomment{CoWriter} activity for a 
 child diagnosed with writing deficits.
 Our objective is to investigate small modifications of the activity adapted to
 Thomas problems (visuo-constructive deficits and inattention) in order to
@@ -623,7 +630,7 @@ cursive letters.
 
 \subsection{Questions}
 
-The main purpose of this study is to test the ergonomic aspects of CoWriter. When introducing the robot, we did not
+The main purpose of this study is to test the ergonomic aspects of\excludecomment{CoWriter}. When introducing the robot, we did not
 provide scenario and gave to children minimal explanations. We then observed how easily children assumed the role of the teacher and how seriously they tried to help the robot.
 
 \subsection{Experimental settings}
@@ -728,7 +735,7 @@ progression ?}
 
 \section{Conclusion}
 This paper provides the first results of long-term experiments 
-with CoWriter activity performed by one child at the time. 
+with\excludecomment{CoWriter} activity performed by one child at the time. 
 
 We introduced some adaptations of
 the interaction design and the learning algorithm that succeeded in keeping
@@ -740,7 +747,7 @@ education tools.
 According to observations, we assume that children understood the robot was progressing thanks to their demonstrations. It had an effect on their motivation: some of them was training at home between to sessions in order to give a better teaching to the robot at the next time.
 The fact that a child with real difficulties in handwriting can easily
 understand the activity and feel that the robot actually learns from his
-demonstrations reveals that CoWriter could have a positive therapeutic impact.
+demonstrations reveals that\excludecomment{CoWriter} could have a positive therapeutic impact.
 
 The evaluation of the robot by the child provided information about his
 understanding of the activity and how much he was satisfied with the
@@ -761,12 +768,12 @@ used to generate more interesting subspaces by PCA and robot initial states.
 Recurrent neural networks (RNN) for handwriting recognition and generation~\cite{DBLP:journals/corr/Graves13} could also be used to generate 
 children-like handwriting.
 
-\section*{Acknowledgments}
+%\section*{Acknowledgments}
 
-This research was partially supported by the Funda\c{c}\~{a}o para a Ci\^{e}ncia
-e a Tecnologia (FCT) with reference UID/CEC/ 50021/2013, and by the Swiss
-National Science Foundation through the National Centre of Competence in
-Research Robotics.
+%This research was partially supported by the Funda\c{c}\~{a}o para a Ci\^{e}ncia
+%e a Tecnologia (FCT) with reference UID/CEC/ 50021/2013, and by the Swiss
+%National Science Foundation through the National Centre of Competence in
+%Research Robotics.
 
 \bibliographystyle{abbrv}
 
