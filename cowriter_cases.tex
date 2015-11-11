@@ -28,8 +28,6 @@
 
 \begin{document}
 
-% if need info about conference :
-%\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
 
 \title{Building successful long child-robot interactions in a learning context}
 \conferenceinfo{HRI}{'16 Chrischurch, New Zealand.}
@@ -40,27 +38,6 @@
 %$^2$Instituto Superior T\'{e}cnico, University of Lisbon, Portugal}
 
 
-%   \author{
-%   % 1st. author
-%   \alignauthor
-%   Alexis Jacq\\
-%       \affaddr{EPFL}\\
-%       \affaddr{IST}
-%   % 2nd. author
-%   \alignauthor
-%   Severin Lemaignan\\
-%       \affaddr{EPFL}
-%   \and
-%   % 3rd. author
-%   \alignauthor Fernando Garcia\\
-%       \affaddr{EPFL}
-%
-%   \alignauthor Pierre Dillembourg\\
-%       \affaddr{EPFL}
-%
-%   \alignauthor Ana Paiva\\
-%           \affaddr{IST}
-%    }
 
 
 \maketitle
@@ -71,12 +48,12 @@ teach handwriting to a robot. The robot must convince the child it needs his hel
 actually learns from his lessons. To keep the child engaged, 
 the robot must learn at the right rate, not too fast otherwise the kid will have
 no opportunity for improving his skills and not too slow otherwise he may loose
-trust in his ability to improve the robot' sills.
+trust in his ability to improve the robot' skills.
 We tested this approach in real pedagogic/therapeutic contexts with
 children in difficulty over repetitive long sessions (40-60 min). Through 3 different
 case studies, we explored and refined experimental designs and algorithms in order to fit
 troubles of each child and to promote their motivation and self-confidence. We report positive observations, suggesting an intrinsic engagement of children to help the
-robot, and their comprehension that they were good enough to be teachers, while they cam with
+robot, and their comprehension that they were good enough to be teachers, while they came with
 a feeling of handicap in handwriting. 
 
 \end{abstract}
@@ -108,19 +85,6 @@ learning when it is for the benefit of a teachable agent than for themselves~\ci
 We rely on this cognitive mechanism to reinforce the child's commitment into the
 robot-mediated handwriting activity.
 
-Concerning learning non-physical skills, the prot\'eg\'e effect have been used in the past by computer-based agents \cite{Chase2009}.
-However, when learning physical skills, robotic partners have been showed to increase users' compliance with the tasks \cite{Bainbridge2011}.
-
-Many studies have been conduced with language skills
-acquisition~\cite{han2010robot}, less often involving physical skills (such as
-calligraphy~\cite{Matsui2013}). Regarding \textit{learning by teaching} paradigm with
-robots, Werfel notes in~\cite{Werfel2014} that studies tend to focus on the
-ability of the robots to learn (in terms of language~\cite{Saunders2010} or
-physical~\cite{Mulling2013} skills, for example) rather than the beneficial impact
-on the teaching for the human. To contrary, our work minimized the robot's skills while we
-concentrate on the possible improvement of children self-confidence and
-motivation promoted by the behaviour of the robot.
-
 In this study, we assume that the key of such a relationship between the child
 and the robot relies on the credibility of the robot:
 The more the robot convinces the child that it is a beginner in
@@ -150,6 +114,27 @@ interaction with the\excludecomment{CoWriter} robot on the child.
 This article consists of four sections. In the first section we give technical details of our setup, such as how are connected the different modules
 together and which algorithms are used to learn and generate robot's letters.
 The following three parts report our three experiments and results. Two case studies specifically designed to be adapted to one child; one introduces a general design conducted with 8 children separately. 
+
+\section{Related work}
+
+Concerning learning non-physical skills, the prot\'eg\'e effect have been used in the past by computer-based agents \cite{Chase2009}.
+Robots maintain better long-term relationship \cite{Kidd2008} and contribute to obtain more learning gains \cite{Leyzberg2014} than with screen-based agents in pedagogical interactions. Specifically, when learning physical skills, robotic partners have been showed to increase users' compliance with the tasks \cite{Bainbridge2011}.
+
+Many studies have been conduced with language skills
+acquisition~\cite{han2010robot}, less often involving physical skills (such as
+calligraphy~\cite{Matsui2013}). Regarding \textit{learning by teaching} paradigm with
+robots, Werfel notes in~\cite{Werfel2014} that studies tend to focus on the
+ability of the robots to learn (in terms of language~\cite{Saunders2010} or
+physical~\cite{Mulling2013} skills, for example) rather than the beneficial impact
+on the teaching for the human. To contrary, our work minimized the robot's skills while we
+concentrate on the possible improvement of children self-confidence and
+motivation promoted by the behaviour of the robot.
+
+The usage of tutor robots in educative activities with children is a sensible point. A bad choice of the robot's behaviour can have negative impacts on the learning \cite{kennedy2015robot}, that are consequent in long-term interactions \cite{leite2014empathic}. Peer robot partners seems more efficient than tutor \cite{zaga2015effect}, but no such study relates advantages of learning by teaching a robot. However, Tanaka and Matsuzoe \cite{Tanaka2012} explored this paradigm with a Nao robot learning vocabulary from children, and Chandra \cite{chandra2015can} used a peer robot leading a learning by teaching activity performed by two children.
+
+A remaining difficulty in Child-Robot-Interaction concerns the evaluation of the interaction. Using questionnaires with children can lead to contradictions between the actual behaviour of the child during interaction and his answers during the interview \cite{lemaignan2015youre}. One reason is that children have the tendency to try to please the experimenter, rather than answer truthfully to survey questions \cite{belpaeme2013child}. Various metrics can be used to describe the behavioural aspects of the interaction (duration of interaction, proximity ...) and learning gains (pre/post tests), but it is much harder to obtain measure of psychological impacts without a very large sample size providing significant results \cite{belpaeme2013child}. 
+
+Measurement of the children engagement must be based on a rigorous model. O'Brien and Toms \cite{o2008user} provided such a framework and listed different attributes that can provide information about the engagement. In our context of Human-Robot-Interaction, we can make distinction between tree kind of engagement : social engagement, task engagement and social-task engagement \cite{corrigan2013social}. Along this paper, we focus on the persistence of the ``prot\'eg\'e effect'': we aim to play with the children's perception of the robot in order to create motivation. In that way, we base our observations and results on metrics of social-task engagement. 
 
 %   \begin{figure}
 %       \centering
