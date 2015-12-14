@@ -32,10 +32,10 @@
 \title{Building successful long child-robot interactions in a learning context}
 \conferenceinfo{HRI}{'16 Chrischurch, New Zealand.}
 
-\author{\# \# \#}
-%\author{Alexis Jacq$^{1,2}$, S\'everin Lemaignan$^1$, Fernando Garcia$^1$, Pierre Dillenbourg$^1$, Ana Paiva$^2$\\
-%$^1$CHILI Lab, \'Ecole Polytechnique F\'ed\'erale de Lausanne, Switzerland,\\
-%$^2$Instituto Superior T\'{e}cnico, University of Lisbon, Portugal}
+%\author{\# \# \#}
+\author{Alexis Jacq$^{1,2}$, S\'everin Lemaignan$^1$, Fernando Garcia$^1$, Pierre Dillenbourg$^1$, Ana Paiva$^2$\\
+$^1$CHILI Lab, \'Ecole Polytechnique F\'ed\'erale de Lausanne, Switzerland,\\
+$^2$Instituto Superior T\'{e}cnico, University of Lisbon, Portugal}
 
 
 
@@ -43,7 +43,7 @@
 \maketitle
 \begin{abstract}
 
-The\excludecomment{CoWriter} activity involves a child in a rich and complex interaction where he has to
+The CoWriter activity involves a child in a rich and complex interaction where he has to
 teach handwriting to a robot. The robot must convince the child it needs his help and it
 actually learns from his lessons. To keep the child engaged, 
 the robot must learn at the right rate, not too fast otherwise the kid will have
@@ -52,7 +52,7 @@ trust in his ability to improve the robot' skills.
 We tested this approach in real pedagogic/therapeutic contexts with
 children in difficulty over repetitive long sessions (40-60 min). Through 3 different
 case studies, we explored and refined experimental designs and algorithms in order to fit
-troubles of each child and to promote their motivation and self-confidence. We report positive observations, suggesting an intrinsic engagement of children to help the
+troubles of each child and to promote their motivation and self-confidence. We report positive observations, suggesting commitment of children to help the
 robot, and their comprehension that they were good enough to be teachers, while they came with
 a feeling of handicap in handwriting. 
 
@@ -65,7 +65,7 @@ a feeling of handicap in handwriting.
 Children facing difficulties in handwriting integration are more exposed
 to troubles during the acquisition of other disciplines as they grow up
 \cite{Christensen2005}. 
-The \excludecomment{CoWriter} activity introduces a new approach to help those children
+The CoWriter activity introduces a new approach to help those children
 \cite{Hood}. While common successful interventions involve children
 in long intervention (at least 10 weeks) focused on \emph{motor} skills \cite{Hoy2011},
 CoWriter is based on \emph{learning by teaching} paradigm and aims to repair
@@ -73,7 +73,7 @@ self-confidence and motivation of the child rather than his handwriting performa
 
 \emph{Learning by teaching} is a technique that engages students to conduct the activity in the role of the teachers in order to support their learning process. This 
 paradigm is known to produce motivational, meta-cognitive and educational
-benefits in a range of disciplines~\cite{Rohrbeck2003}. The\excludecomment{CoWriter} project
+benefits in a range of disciplines~\cite{Rohrbeck2003}. The CoWriter project
 is the first application of learning by teaching approach to handwriting. 
 
 The effectiveness of our learning by teaching activity is build on the
@@ -93,7 +93,7 @@ the child will engage in the interaction. Two important technical aspects of
 credibility are: how to generate the initial state of the robot, and how to design its
 learning behavior. In our previous work~\cite{hood2015when}, we used a limited approach in which
 letters had to be written as a single stroke (no pen lifting) and that covered
-typical mistakes of adults extracted from an handwritten letters database. Experiments with\excludecomment{CoWriter} were conducted in school, involving either group of
+typical mistakes of adults extracted from an handwritten letters database. Experiments with CoWriter were conducted in school, involving either group of
 children doing the activity together or children
 in short individual sessions.
 
@@ -109,7 +109,7 @@ technical limitations of robot's letter learning and generation, and we introduc
 Through three experiments, we involved children with real difficulties or low 
 self-esteem in repeated long sessions (four times about one hour). We used different
 measures, both qualitative and quantitative, to express the impact of those
-interaction with the\excludecomment{CoWriter} robot on the child.
+interaction with the CoWriter robot on the child.
 
 This article consists of four sections. In the first section we give technical details of our setup, such as how are connected the different modules
 together and which algorithms are used to learn and generate robot's letters.
@@ -340,20 +340,18 @@ remains however convenient during the development phase and we kept using it in
 our experiments.
 
 Most of the nodes are written in Python, and the whole source code of the
-project will be made \excludecomment{is}available online\footnote{The primary repository is\\ 
-	\textit{Anonymized URL}.}.
-%\url{https://github.com/chili-epfl/cowriter_letter_learning}.}.
+project will be made is available online\footnote{The primary repository is\\ 
+\url{https://github.com/chili-epfl/cowriter_letter_learning}.}.
 
 
 \section{case study 1: Vincent}\label{Vincent}
 \subsection{Context}
-Vincent is a five year-old child. At school, he had difficulties to learn writing, particularly with cursive letters. From our perspective, Vincent is shy and quiet. He suffers from poor self-confidence much more than any actual writing problem.
+Vincent$^*$ is a five year-old child. At school, he has difficulties to learn writing, particularly with cursive letters. From our perspective, Vincent is shy and quiet. He suffers from poor self-confidence much more than any actual writing problem. The experiment was conducted without any therapist, in our laboratory. A parent was here to accompany the child, but he did not intervene during interactions. Children's personalities, conditions and state evaluation were reported by the parent.
 
-\subsection{Questions}
+\subsection{Hypothesis}
 
-The\excludecomment{CoWriter} activity needs a child engaged as interaction leader. 
-With this study we consider the problem of long-term interactions: is it possible to
-sustain this engagement over several one-hour sessions?
+The CoWriter activity needs a child engaged as interaction leader. 
+With this study we consider the problem of long-term interactions. We hypothesize that with an appealing scenario children can maintain motivation in doing a handwriting activity for an hour over 4 sessions.
 
 %   \begin{figure}
 %       \centering
@@ -373,13 +371,14 @@ sustain this engagement over several one-hour sessions?
 %       \label{fig:3a}
 %   \end{figure}
 
-\subsection{Experimental settings}
+\subsection{Experimental design and methodology}
 
-The experiment as conducted in laboratory setting. Our goal was to provide Vincent with
+Our goal was to provide Vincent with
 an environment that would enable him to sustain engagement over four one-hour sessions, 
-one session per week. We decided 
-to introduce a scenario that justified the activity to the child
-where a robot wants to learn handwriting. We used two Nao robots: a blue one 
+one session per week. We decided to introduce a scenario to elicit a strong ``prot\'eg\'e effect" and such induce a stronger commitment. While the child came with low intrinsic motivation in writing exercise, our idea was to use the robot to introduce a new extrinsic motivation: improving letters in order to help the robot. 
+
+
+In our scenario we used two Nao robots: a blue one 
 (called Mimi) and an orange one (called Clem). Mimi was away for a 
 scientific mission, and the two robots had to communicate by mails. But they decided to do it 
 ``like humans", with handwritten messages. While Mimi was good in handwriting, 
@@ -413,6 +412,19 @@ Vincent had to tell the robot what to write with small plastic letters (visible
 behind the robot on Figure~\ref{fig:Vincent}). A third person was here to send
 the formed word to the robot via the computer.
 
+During the experiment, all robot and child writings on the tablet were recorded on log files. Likewise, we recorded the time date when the child start and finish a demonstration.  
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{diego}
+    \caption{\small Vincent correcting {\sc nao}'s attempt by rewriting the
+        whole word. Empty boxes are drawn on the screen to serve as template for the child
+        and to make word segmentation more robust.}
+    \label{fig:Vincent}
+\end{figure}
+
+\subsection{Measures}
+
 %   \begin{figure}
 %       \centering
 %       \includegraphics[width=0.9\linewidth]{mimi_mails}
@@ -422,6 +434,48 @@ the formed word to the robot via the computer.
 %       }
 %       \label{fig:mimi_mails}
 %   \end{figure}
+We measured the commitment of the child with the number of demonstration he provided. We also measured the duration of sessions. During the two last sessions, we recorded the time taken by the child to write demonstrations.
+
+After the experiment we interviewed separately the child and his parent. We asked the child if he though the robot was needing his help, what was le level of the robot before and after the sessions, etc... The goal was to make sure he understood his role in the interaction. The mother was asked if she observed any impact of our activity on the child. 
+
+
+\subsection{Analysis}
+
+We compared the number of demonstrations provided by Vincent along the 4 sessions (reported on Table~\ref{table:vincent_sess}) and we summed the time spend by the child to write demonstration during the 2 last sessions.
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Session & S1 & S2 & S3 & S4\\ \hline
+        Number of demo & 23 & 34 & 52 & 46\\ \hline
+
+    \end{tabular}
+    \caption{\small Number of demonstrations provided by Vincent along the 4 sessions.}
+    \label{table:vincent_sess}
+\end{table}
+
+\subsection{Results}
+Overall, Vincent provided 155 demonstrations to the robot. We can see in Table~\ref{table:vincent_sess} that the number of demonstrations provided by Diego was globally increasing along sessions while the difficulty of the activity was also increasing. Interestingly, as the number of demonstration decreased from session 3 to session 4, the total time spend to write demonstrations is similar: 41.6s in session 3 ($\thicksim$0.8s per letter) and 41.1s in session 4 ($\thicksim$0.89s per letter). A explanation of this result could be that since the difficulty was increasing the child spent more time to write his demonstrations. Our activity succeeded in the sense that the child found enough motivation to provide an increasing number of demonstrations, and was still (or even more) carefully in the last session.
+
+It is difficult to make conclusion from the interview of the child, because he could easily be influenced to provide us with positive answers. It still seems that he was aware of his role and the impact of his demonstrations on the state of the robot. To the question ``how is the robot's handwriting ?" he answered that the robot ``made progresses but still has to take lessons", what shows that he clearly understood that the robot was taking the role of the student and that it improved its writing skills along the sessions.
+ 
+After the first week, he showed
+confidence when playing with his ``prot\'eg\'e" and he built affective bonds with the robot
+over the course of the study, as evidenced by some cries on the last session,
+and several letters sent to the robot \emph{after} the end of the study
+(one of them 4 months later) to get news. This represents a promising initial
+result: we can effectively keep a child committed into the activity with the robot for a relatively
+long periods of time (about 5 hours).
+
+From the parent's perspective, Vincent was actually showing a new motivation in improving his handwriting. He took pleasure to work with the robot and to accomplish his teacher's mission. She confirmed that an affection of the child for the robot took root within the experiment. Finally she saw an improvement of his handwriting and explained that the child ``passed from a mix of script and cursive writing up to a full-cursive writing".
+
+But no conclusion can be drawn in terms of actual handwriting remediation: we did
+not design this study to formally assess possible improvements. However, as pictured on Figure~\ref{fig:stimuli}, Vincent was able to
+significantly improve the robot's skill, and he acknowledged that he had been
+able to help the robot: in that regard, Vincent convinced himself that he was
+``good enough'' at writing to help someone else, which is likely to have
+a positive impact on his self-esteem.
 
 \begin{figure}
     \centering
@@ -438,33 +492,6 @@ the formed word to the robot via the computer.
 
     \label{fig:stimuli}
 \end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\linewidth]{diego}
-    \caption{\small Vincent correcting {\sc nao}'s attempt by rewriting the
-        whole word. Empty boxes are drawn on the screen to serve as template for the child
-        and to make word segmentation more robust.}
-    \label{fig:Vincent}
-\end{figure}
-
-\subsection{Results}
-Overall, Vincent provided 154 demonstrations to the robot, and he remained
-actively engaged during the four weeks. The story was well accepted and
-the child seriously engaged in the game. After the first week, he showed
-confidence when playing with his ``prot\'eg\'e" and he built affective bonds with the robot
-over the course of the study, as evidenced by some cries on the last session,
-and several letters sent to the robot \emph{after} the end of the study
-(one of them 4 months later) to get news. This represents a promising initial
-result: we can effectively keep a child engaged with the robot for a relatively
-long periods of time (about 5 hours).
-
-No conclusion can be drawn in terms of actual handwriting remediation: we did
-not design this study to formally assess possible improvements. However, as pictured on Figure~\ref{fig:stimuli}, Vincent was able to
-significantly improve the robot's skill, and he acknowledged that he had been
-able to help the robot: in that regard, Vincent convinced himself that he was
-``good enough'' at writing to help someone else, which is likely to have
-a positive impact on his self-esteem.
 
 
 
@@ -485,15 +512,15 @@ meeting, the therapist provided us with a sequence of numbers
 written by Thomas. one of the observed problems was drawing
 horizontally-inverted allographs, mainly for ``5".
 
-\subsection{Questions}
-This study focuses on technical adaptations of the\excludecomment{CoWriter} activity for a 
+\subsection{Hypothesis}
+This study focuses on technical adaptations of the CoWriter activity for a 
 child diagnosed with writing deficits.
 Our objective is to investigate small modifications of the activity adapted to
 Thomas problems (visuo-constructive deficits and inattention) in order to
 keep him focused
 on the activity during forty-minutes sessions, and to evidence to the child that the robot is progressing by dint of his demonstrations. 
 
-\subsection{Experimental settings}
+\subsection{Experimental design and methodology}
 The experiment was conducted in the therapist's office (four sessions 
 spanning over 5 weeks). We assumed that a scenario like the one we used 
 for Vincent would not be usable with Thomas. We just introduced the robot 
@@ -527,6 +554,8 @@ In this setup, we added a second tablet with one button per number. It was used
 by the child to chose a new number to teach to the robot. It also provided the
 possibility to enter letters or words, and to switch to another activity (robot telling a story if the child needs a short break).
 
+\subsection{Measures}
+
 \begin{figure}
     \centering
     \includegraphics[width=0.9\linewidth]{learning_6_demos}
@@ -537,6 +566,8 @@ possibility to enter letters or words, and to switch to another activity (robot 
 process of the robot.}
     \label{learning_6_demos}
 \end{figure}
+
+\subsection{Analysis}
 
 \subsection{Results}
 Despite his attention deficit, Thomas was able to remain engaged in the activity during more than
@@ -604,25 +635,25 @@ design for each case in order to sustain the child's engagement.
 In our next experiment, we conducted case studies with eight children using a single
 design. Those children have in common difficulties to learn
 cursive writing but the natures and intensities of those troubles are radically
-different from one child to another. Valentine (7 years old), Alexandre (6.5) and
-Jonathan (7) are under the care of an
-occupational therapist. Enzo (8) and Matenzo (7) are repeating their school year
-because of writing. Mona (6) and Adele (8) are bottom of their respective
-classes in writing activities. Nathan (7) is under the care of a neurologist, and
+different from one child to another. Valerie (7 years old), Antoine (6.5) and
+Johan (7) are under the care of an
+occupational therapist. Emilien (8) and Mathieu (7) are repeating their school year
+because of writing. Marie (6) and Adele (8) are bottom of their respective
+classes in writing activities. Nicolas (7) is under the care of a neurologist, and
 has been diagnosed with specific language impairment. All of those children are
 expected, given their school level, to know the allographs of
 cursive letters. 
 
-\subsection{Questions}
+\subsection{Hypothesis}
 
-The main purpose of this study is to test the ergonomic aspects of\excludecomment{CoWriter}. When introducing the robot, we did not
+The main purpose of this study is to test the ergonomic aspects of CoWriter. When introducing the robot, we did not
 provide scenario and gave to children minimal explanations. We then observed how easily children assumed the role of the teacher and how seriously they tried to help the robot.
 
-\subsection{Experimental settings}
+\subsection{Experimental design and methodology}
 
 This experiment took place in the coffee room of a therapists shared surgery
 in Normandy, France. Over two weeks, each child came three time for one-hour
-session, except Adele and Mona who did just one session. A facilitator was present to explain the rules of the game and tablet usage. As in the previous experiment, children were provided with two tablets : one to choose a word (or a single letter) to teach, and one
+session, except Adele and Marie who did just one session. A facilitator was present to explain the rules of the game and tablet usage. As in the previous experiment, children were provided with two tablets : one to choose a word (or a single letter) to teach, and one
 used by both the child and the robot to write. We also provided the allograph's template if the child asked for. 
 
 The starting point of the robot's writing was the same for all children: we
@@ -644,6 +675,10 @@ robot instead of himself. It became possible to estimate if a child is playing
 seriously given correlation between his evaluation and robot's actual
 progression.
 
+
+\subsection{Measures}
+
+\subsection{Analysis}
 
 \subsection{Results}
 
@@ -699,14 +734,14 @@ they were actually evaluating themselves.
     \begin{tabular}{|c|c|c|c|c|c|}
         \hline
         child & demo & rew & pun & p(robot) & p(child)\\ \hline
-        valentine & 127 & 24 & 6 & 2.4e-03 & 5.5e-02\\ \hline
-        enzo & 223 & 20 & 9 & 1.7e-01 & 3.5e-01\\ \hline
-        matenzo & 131 & 10 & 3 & 3.8e-03 & 7.9e-03\\ \hline
-        jonathan & 98 & 10 & 5 &  1.5e-01 & 3.8e-01\\ \hline
-        nathan & 115 & 16 & 4 & 5.3e-04 & 2.7e-03\\ \hline
-        alexandre & 83 & 10 & 3 & 3.1e-02 & 6.0e-01\\ \hline
+        Valerie & 127 & 24 & 6 & 2.4e-03 & 5.5e-02\\ \hline
+        Emilien & 223 & 20 & 9 & 1.7e-01 & 3.5e-01\\ \hline
+        Mathieu & 131 & 10 & 3 & 3.8e-03 & 7.9e-03\\ \hline
+        Johan & 98 & 10 & 5 &  1.5e-01 & 3.8e-01\\ \hline
+        Nicolas & 115 & 16 & 4 & 5.3e-04 & 2.7e-03\\ \hline
+        Antoine & 83 & 10 & 3 & 3.1e-02 & 6.0e-01\\ \hline
         adele & 35 & 4 & 2 & 5.0e-02 & 3.7e-02\\ \hline
-        mona & 40 & 5 & 1 &  5.4e-01 & 2.0e-01\\ \hline
+        Marie & 40 & 5 & 1 &  5.4e-01 & 2.0e-01\\ \hline
     \end{tabular}
     \caption{\small results of evaluations. demo: number of demonstrations provided by
         the child over all session. rew: number of rewards accorded by
@@ -720,7 +755,7 @@ progression ?}
 
 \section{Conclusion}
 This paper provides the first results of long-term experiments 
-with\excludecomment{CoWriter} activity performed by one child at the time. 
+with CoWriter activity performed by one child at the time. 
 
 We introduced some adaptations of
 the interaction design and the learning algorithm that succeeded in keeping
@@ -732,7 +767,7 @@ education tools.
 According to observations, we assume that children understood the robot was progressing thanks to their demonstrations. It had an effect on their motivation: some of them was training at home between to sessions in order to give a better teaching to the robot at the next time.
 The fact that a child with real difficulties in handwriting can easily
 understand the activity and feel that the robot actually learns from his
-demonstrations reveals that\excludecomment{CoWriter} could have a positive therapeutic impact.
+demonstrations reveals that CoWriter could have a positive therapeutic impact.
 
 The evaluation of the robot by the child provided information about his
 understanding of the activity and how much he was satisfied with the
