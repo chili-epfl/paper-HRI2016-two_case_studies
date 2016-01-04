@@ -1,13 +1,11 @@
-\documentclass{sig-alternate}
+\documentclass[conference]{IEEEtran}
 
 \usepackage{graphicx} 
 \usepackage{subfigure}
 \usepackage{paralist}
 \usepackage[]{algorithm2e}
 \usepackage{hyperref}
-\usepackage{comment} %for anonymized version everything removed for anonymization is in \excludecomment{}
-
-
+\usepackage{ amssymb }
 \usepackage{url}
 \usepackage{booktabs}
 
@@ -30,15 +28,16 @@
 
 
 \title{Building successful long child-robot interactions in a learning context}
-\conferenceinfo{HRI}{'16 Christchurch, New Zealand.}
 
-%\author{\# \# \#}
-\author{Alexis Jacq$^{1,2}$, S\'everin Lemaignan$^1$, Fernando Garcia$^1$, Pierre Dillenbourg$^1$, Ana Paiva$^2$\\
-$^1$CHILI Lab, \'Ecole Polytechnique F\'ed\'erale de Lausanne, Switzerland,\\
-$^2$Instituto Superior T\'{e}cnico, University of Lisbon, Portugal}
-
-
-
+\author{\IEEEauthorblockN{Alexis Jacq$^{1,2}$, S\'everin Lemaignan$^1$, Fernando Garcia$^1$, Pierre Dillenbourg$^1$, Ana Paiva$^2$}
+\IEEEauthorblockA{
+$^1$Computer-Human Interaction in Learning and Instruction Laboratory (CHILI) \\
+\'Ecole Polytechnique F\'ed\'erale de Lausanne (EPFL), Lausanne, Switzerland \\
+Email: \tt firstname.lastname@epfl.ch}
+\IEEEauthorblockA{
+$^2$Instituto Superior T\'{e}cnico, \\University of Lisbon, Portugal
+}
+}
 
 \maketitle
 \begin{abstract}
@@ -58,7 +57,9 @@ a feeling of handicap in handwriting.
 
 \end{abstract}
 
-%\keywords{child-robot interaction, learning by teaching, protégé effect, children self-confidence, intrinsic motivation, robotic handwriting learning}
+\begin{IEEEkeywords}
+Child-robot Interaction; Learning by teaching; Protégé Effect; Children Self-confidence; Intrinsic Motivation; Robotic Handwriting Learning
+\end{IEEEkeywords}
 
 \section{Introduction}
 
@@ -780,7 +781,7 @@ children-like handwriting.
 %National Science Foundation through the National Centre of Competence in
 %Research Robotics.
 
-\bibliographystyle{abbrv}
+\bibliographystyle{IEEEtran}
 
 \bibliography{cowriter} 
 
