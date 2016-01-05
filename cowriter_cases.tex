@@ -408,21 +408,24 @@ To complement the intrinsic motivation of helping a robot to communicate with an
 gradually increased the complexity of Vincent's task to keep it challenging and
 interesting (first week: demonstration of single letters; second week:
 short words; third week: a full message -- Figure~\ref{fig:stimuli}).
+%
+%Vincent had to tell the robot what to write with small plastic letters (visible
+%behind the robot on Figure~\ref{fig:Vincent}). A third person was here to send
+%the formed word to the robot via the computer.
 
-Vincent had to tell the robot what to write with small plastic letters (visible
-behind the robot on Figure~\ref{fig:Vincent}). A third person was here to send
+Vincent had to tell the robot what to write with small plastic letters. A third person was here to send
 the formed word to the robot via the computer.
 
 During the experiment, all robot and child writings on the tablet were recorded on log files. Likewise, we recorded the time date when the child start and finish a demonstration.  
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\linewidth]{diego}
-    \caption{\small Vincent correcting {\sc nao}'s attempt by rewriting the
-        whole word. Empty boxes are drawn on the screen to serve as template for the child
-        and to make word segmentation more robust.}
-    \label{fig:Vincent}
-\end{figure}
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.4\linewidth]{diego}
+%    \caption{\small Vincent correcting {\sc nao}'s attempt by rewriting the
+%        whole word. Empty boxes are drawn on the screen to serve as template for the child
+%        and to make word segmentation more robust.}
+%    \label{fig:Vincent}
+%\end{figure}
 
 \subsection{Measures}
 
@@ -437,13 +440,12 @@ During the experiment, all robot and child writings on the tablet were recorded 
 %   \end{figure}
 We measured the commitment of the child with the number of demonstration he provided. We also measured the duration of sessions. During the two last sessions, we recorded the time taken by the child to write demonstrations.
 
-After the experiment we interviewed separately the child and his parent. We asked the child if he though the robot was needing his help, what was le level of the robot before and after the sessions, etc... The goal was to make sure he understood his role in the interaction. The mother was asked if she observed any impact of our activity on the child. 
+After the experiment we interviewed the parent of the child. She was asked if she observed any impact of our activity on the child.
 
 
 \subsection{Analysis}
 
 We compared the number of demonstrations provided by Vincent along the 4 sessions (reported on Table~\ref{table:vincent_sess}) and we summed the time spend by the child to write demonstration during the 2 last sessions.
-
 \begin{table}
     \centering
     \begin{tabular}{|c|c|c|c|c|}
@@ -452,15 +454,12 @@ We compared the number of demonstrations provided by Vincent along the 4 session
         Number of demo & 23 & 34 & 52 & 46\\ \hline
 
     \end{tabular}
-    \caption{\small Number of demonstrations provided by Vincent along the 4 sessions.}
+    \caption{\footnotesize Number of demonstrations provided by Vincent along the 4 sessions.}
     \label{table:vincent_sess}
 \end{table}
-
 \subsection{Results}
 Overall, Vincent provided 155 demonstrations to the robot. We can see in Table~\ref{table:vincent_sess} that the number of demonstrations provided by Diego was globally increasing along sessions while the difficulty of the activity was also increasing. Interestingly, as the number of demonstration decreased from session 3 to session 4, the total time spend to write demonstrations is similar: 41.6s in session 3 ($\thicksim$0.8s per letter) and 41.1s in session 4 ($\thicksim$0.89s per letter). A explanation of this result could be that since the difficulty was increasing the child spent more time to write his demonstrations. Our activity succeeded in the sense that the child found enough motivation to provide an increasing number of demonstrations, and was still (or even more) carefully in the last session.
 
-It is difficult to make conclusion from the interview of the child, because he could easily be influenced to provide us with positive answers. It still seems that he was aware of his role and the impact of his demonstrations on the state of the robot. To the question ``how is the robot's handwriting ?" he answered that the robot ``made progresses but still has to take lessons", what shows that he clearly understood that the robot was taking the role of the student and that it improved its writing skills along the sessions.
- 
 After the first week, he showed
 confidence when playing with his ``prot\'eg\'e" and he built affective bonds with the robot
 over the course of the study, as evidenced by some cries on the last session,
@@ -481,10 +480,10 @@ a positive impact on his self-esteem.
 \begin{figure}
     \centering
     \subfigure[Initial letter, generated by the robot]{
-        \includegraphics[height=6cm]{diego-initial-letter}
+        \includegraphics[height=4.5cm]{diego-initial-letter}
     }
     \subfigure[Final letter, after training with Vincent]{
-        \includegraphics[height=6cm]{diego-final-letter}
+        \includegraphics[height=4.5cm]{diego-final-letter}
     }
 
     \caption{\small (French) text generated by the robot, before and after a one
@@ -621,16 +620,13 @@ pictured on Figure~\ref{learning_6_demos}.}
 
 \begin{figure}
     \centering
-    \subfigure[number 1]{
-        \includegraphics[width=6cm]{henry1}
-    }
     \subfigure[number 2]{
-        \includegraphics[width=6cm]{henry2}
+        \includegraphics[width=4.1cm]{henry2}
     }
 	\subfigure[number 5]{
-        \includegraphics[width=6cm]{henry5}
+        \includegraphics[width=4.1cm]{henry5}
     }
-    \caption{\small Improvement of Thomas demonstrations for some numbers: a) drawing the allograph of the number 1, b) the number 2 and c) the number 5. Thomas progressively took care of the demonstrations he was providing to the robot for those numbers. We used for this figure the same metric than the one used for the acceptance algorithm. Distances are normalized with respect to the biggest value. The dashed line correspond to the threshold of robot's acceptance.}
+    \caption{\small Improvement of Thomas demonstrations for some numbers: a) the number 2 and b) the number 5. Thomas progressively took care of the demonstrations he was providing to the robot for those numbers. We used for this figure the same metric than the one used for the acceptance algorithm. Distances are normalized with respect to the biggest value. The dashed line correspond to the threshold of robot's acceptance.}
 
     \label{Thomas_progress}
 \end{figure}
@@ -730,7 +726,7 @@ they were actually evaluating themselves.
         \emph{Ad\`ele}   & 35           & 4               & 2               & 0.28 \small\tt * & 0.30 \small\tt ** \\
         \emph{Marie}   & 40           & 5               & 1               & -0.02 \small\it ns & 0.13 \small\it ns\\ \bottomrule
     \end{tabular}
-    \caption{\small Feedback from the children to the robot. \emph{\#Dem}
+    \caption{\footnotesize Feedback from the children to the robot. \emph{\#Dem}
         denotes the average number of demonstrations per session provided by the children;
         \emph{\#Pos} and \emph{\#Neg} the total number of positive (resp.
         negative) feedbacks they provided. $r$ (robot) and $r$ (child) is the correlation coefficient
@@ -768,7 +764,7 @@ give a response). $\bullet$ We can reinforce the learnt allograph when the robot
 receives a good evaluation, or make it forget the allograph when it
 receives a bad evaluation.
 
-After all those
+After all these
 experiments, we now have a large database of children writings that could be
 used to generate more interesting subspaces by PCA and robot initial states. 
 Recurrent neural networks (RNN) for handwriting recognition and generation~\cite{DBLP:journals/corr/Graves13} could also be used to generate 
@@ -782,7 +778,6 @@ children-like handwriting.
 %Research Robotics.
 
 \bibliographystyle{IEEEtran}
-
 \bibliography{cowriter} 
 
 \end{document}
