@@ -27,15 +27,14 @@
 \begin{document}
 
 
-\title{Building successful long child-robot interactions in a learning context}
+\title{Building Successful Long Child-Robot Interactions in a Learning Context}
 
 \author{\IEEEauthorblockN{Alexis Jacq$^{1,2}$, S\'everin Lemaignan$^1$, Fernando Garcia$^1$, Pierre Dillenbourg$^1$, Ana Paiva$^2$}
 \IEEEauthorblockA{
-$^1$Computer-Human Interaction in Learning and Instruction Laboratory (CHILI) \\
-\'Ecole Polytechnique F\'ed\'erale de Lausanne (EPFL), Lausanne, Switzerland \\
-Email: \tt firstname.lastname@epfl.ch}
+$^1$CHILI Lab, \'Ecole Polytechnique F\'ed\'erale de Lausanne (EPFL), Lausanne,
+Switzerland}
 \IEEEauthorblockA{
-$^2$Instituto Superior T\'{e}cnico, \\University of Lisbon, Portugal
+$^2$Instituto Superior T\'{e}cnico, University of Lisbon, Portugal
 }
 }
 
@@ -49,11 +48,12 @@ the robot must learn at the right rate, not too fast otherwise the kid will have
 no opportunity for improving his skills and not too slow otherwise he may loose
 trust in his ability to improve the robot' skills.
 We tested this approach in real pedagogic/therapeutic contexts with
-children in difficulty over repetitive long sessions (40-60 min). Through 3 different
-case studies, we explored and refined experimental designs and algorithms in order to fit
+children in difficulty over repeated long sessions (40-60 min). Through 3 different
+case studies, we explored and refined experimental designs and algorithms in
+order for the robot to adapt to the
 troubles of each child and to promote their motivation and self-confidence. We report positive observations, suggesting commitment of children to help the
-robot, and their comprehension that they were good enough to be teachers, while they came with
-a feeling of handicap in handwriting. 
+robot, and their comprehension that they were good enough to be teachers,
+overcoming their initial low confidence with handwriting.
 
 \end{abstract}
 
@@ -67,17 +67,17 @@ Children facing difficulties in handwriting integration are more exposed
 to troubles during the acquisition of other disciplines as they grow up
 \cite{Christensen2005}. 
 The CoWriter activity introduces a new approach to help those children
-\cite{Hood}. While common successful interventions involve children
+\cite{Hood}. While traditional successful interventions involve children
 in long intervention (at least 10 weeks) focused on \emph{motor} skills \cite{Hoy2011},
 CoWriter is based on \emph{learning by teaching} paradigm and aims to repair
 self-confidence and motivation of the child rather than his handwriting performance alone.
 
-\emph{Learning by teaching} is a technique that engages students to conduct the activity in the role of the teachers in order to support their learning process. This 
+\emph{Learning by teaching} is a technique that engages the students to conduct an activity as the teachers in order to support their own learning process. This 
 paradigm is known to produce motivational, meta-cognitive and educational
 benefits in a range of disciplines~\cite{Rohrbeck2003}. The CoWriter project
-is the first application of learning by teaching approach to handwriting. 
+is the first application of the learning by teaching paradigm applied to handwriting with a robot.
 
-The effectiveness of our learning by teaching activity is build on the
+The effectiveness of our learning by teaching activity builds on the
 ``prot\'eg\'e effect'': the teacher feels responsible for his student, commits
 to the student's success and possibly experiences student's failure as his own
 failure to teach. Teachable computer-based agents have previously been used to
@@ -86,40 +86,41 @@ learning when it is for the benefit of a teachable agent than for themselves~\ci
 We rely on this cognitive mechanism to reinforce the child's commitment into the
 robot-mediated handwriting activity.
 
-In this study, we assume that the key of such a relationship between the child
+We assume here that the key of such a relationship between the child
 and the robot relies on the credibility of the robot:
-The more the robot convinces the child that it is a beginner in
-handwriting who needs help -- building the ``prot\'eg\'e effect''-- the better
-the child will engage in the interaction. Two important technical aspects of
-credibility are: how to generate the initial state of the robot, and how to design its
-learning behavior. In our previous work~\cite{hood2015when}, we used a limited approach in which
+the more the robot convinces the child that it is a beginner in
+handwriting who needs help -- therefore initiating a ``prot\'eg\'e effect''-- the deeper
+the child will engage in the interaction. We focus hereafter on two aspects that are instrumental in building a
+credible teaching situation: how to generate the initial state of the learner-robot, and how to design its
+learning behavior.
+
+We previously used a limited approach~\cite{hood2015when} in which
 letters had to be written as a single stroke (no pen lifting) and that covered
-typical mistakes of adults extracted from an handwritten letters database. Experiments with CoWriter were conducted in school, involving either group of
+typical mistakes of adults extracted from an handwritten letters database. Our initial experiments were conducted in school, involving either group of
 children doing the activity together or children
 in short individual sessions.
-
-These studies have been conducted to evaluate the feasibility and technical soundness
-of the interaction system. Because of the group effect and the briefness of
-interactions, no conclusions were reached about any positive effect of the
-interaction. Subject children where randomly chosen in school
+These studies were conducted to evaluate the feasibility and technical soundness
+of the interaction system. Because of the group effect and the briefness of the
+interactions, no conclusions could be reached about the positive effect of the
+interaction. Participating children where randomly chosen in school
 classes and had no specific difficulties in handwriting. This made it
-impossible to observe any remediation of self-esteem or motivation.
+difficult to observe any remediation of low self-esteem or motivation.
 
-In this paper, we explore different algorithmic and staging approaches built on the system presented in~\cite{hood2015when} in order to figure out intricate aspects of long child-robot interactions in a pedagogical context. We solved previous 
-technical limitations of robot's letter learning and generation, and we introduce new algorithmic approaches that make robot's behaviour more convincing.
-Through three experiments, we involved children with real difficulties or low 
+As a follow up, this article reports on further experimental investigations. We explore different algorithmic and staging approaches built on top of the original system in order to figure out intricate aspects of long child-robot interactions in a pedagogical context. We solved previous 
+technical limitations of robot's letter learning and generation, and we introduce new algorithmic approaches that makes the behavior of the robot more convincing.
+Through three experiments, we involved children with actual handwriting troubles or low 
 self-esteem in repeated long sessions (four times about one hour). We used different
 measures, both qualitative and quantitative, to express the impact of those
 interaction with the CoWriter robot on the child.
 
-This article consists of four sections. In the first section we give technical details of our setup, such as how are connected the different modules
-together and which algorithms are used to learn and generate robot's letters.
-The following three parts report our three experiments and results. Two case studies specifically designed to be adapted to one child; one introduces a general design conducted with 8 children separately. 
+This article consists of four sections. In the first section we give technical details of our setup, such as how the different modules are connected
+together and which algorithms are used for the robot to learn and generate letters.
+The following three parts report our the three experiments and results: Two case studies that were each designed for a specific child; one experiment that relies on a general design, and conducted with 8 children separately.
 
 \section{Related work}
 
-Concerning learning non-physical skills, the prot\'eg\'e effect have been used in the past by computer-based agents \cite{Chase2009}.
-Robots maintain better long-term relationship \cite{Kidd2008} and contribute to obtain more learning gains \cite{Leyzberg2014} than with screen-based agents in pedagogical interactions. Specifically, when learning physical skills, robotic partners have been showed to increase users' compliance with the tasks \cite{Bainbridge2011}.
+Concerning learning non-physical skills, the prot\'eg\'e effect has been used in the past by computer-based agents~\cite{Chase2009}.
+Robots maintain better long-term relationship~\cite{Kidd2008} and contribute to obtain more learning gains~\cite{Leyzberg2014} than with screen-based agents in pedagogical interactions. Specifically, when learning physical skills, robotic partners have been showed to increase users' compliance with the tasks~\cite{Bainbridge2011}.
 
 Many studies have been conduced with language skills
 acquisition~\cite{han2010robot}, less often involving physical skills (such as
