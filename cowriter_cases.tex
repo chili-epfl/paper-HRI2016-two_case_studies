@@ -234,17 +234,17 @@ PCA subspace. That way, the principal eigenvectors obtained progressively
 tended to encode the main deformations of letter done by the child. The following algorithm explains the successive steps of this approach:
 
 \begin{algorithm}
-   generate initial dataset $D$\;
-   generate initial subspace $S$ by PCA of $D$\;
-   generate initial robot state $r$ (random point in $S$)\;
+   Generate initial dataset $D$ \\
+   Generate initial subspace $S$ by PCA of $D$ \\
+   Generate initial robot state $r$ (random point in $S$) \\
    \If{robot receives a demonstration $d$}{
-   	add $d$ to dataset: $D'\leftarrow D\cup d$\;
-   	recompute subspace $S'$ by PCA of $ D'$\;
-   	compute coordinates $r'$ of $r$ in $S'$\;
-   	compute coordinates $d'$ of $d$ in $S'$\;
-   	learn the demonstration: $r''= \frac{1}{2} \dot (r'+d')$\;
+    Add $d$ to dataset: $D'\leftarrow D\cup d$ \\
+    Recompute subspace $S'$ by PCA of $ D'$ \\
+    Compute coordinates $r'$ of $r$ in $S'$ \\
+    Compute coordinates $d'$ of $d$ in $S'$ \\
+    Learn the demonstration: $r= \frac{(r'+d')}{2}$ \\
    }
-   \caption{learning from demonstration in adaptive PCA subspace}
+   \caption{Learning from demonstration in an adaptive PCA subspace}
 \end{algorithm}
 
 From our perspective, this dynamic subspace was more adapted to the 
