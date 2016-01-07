@@ -700,31 +700,31 @@ word. The reference letters where manually created beforehand, based on typical 
 
 \subsection{Results}
 
-All children maintained their engagement during the whole sessions. They provided
-on average 42 demonstrations per session. All children used evaluation buttons and
-had preference to reward the robot (in total, 99 rewards and 33 punishments were recorded). Interestingly, the time spent by children to write one demonstration systematically increased from one session to the following. We can interpret this phenomena by the fact that they were more careful to slowly explain the correct gesture to the robot. 
+All children maintained their engagement during all the sessions. They provided
+on average 42 demonstrations per session. All children made use of the evaluation buttons and
+had preference to reward the robot (in total, 99 positive feedbacks and 33 negative ones were recorded). Interestingly, the time spent by the children to draw the demonstrations systematically increased from one session to the other. We interpret this result as the children being more careful and demonstrating the correct gestures to the robot in a slower fashion.
 
-We found that 5 of the 8 children provided evaluation significantly correlated with robot's progress. The coefficients of correlation and p-values of each child is reported in the second-to-last column of Table~\ref{table:scores}.
+We found that five children out of the eight provided evaluations that significantly correlated with progress of the robot. The coefficients of correlation $r_{robot}$ are reported in Table~\ref{table:scores}.
 
-We also studied correlation between children's evaluations and their own
-progression. The analysis was conducted in the same way, using distances between children demonstrations and reference allographs to compute children progressions.
-3 of 5 children evaluations correlated with the robot's progress were also significantly correlated with their own progress (last column of Table~\ref{table:scores}). For
+We also computed the correlation between the children's evaluations and their own
+progress. The analysis was conducted in the same way, using distances between the children's demonstrations and reference allographs as a progress score.
+The evaluations of three out of the five children whose evaluations correlated with the robot's progress, were also significantly correlated with their own progress ($r_{child}$ in Table~\ref{table:scores}). For
 those children, it seems that the robot was reflecting their own performances, and while they
-were judging the robot positively (three times more rewards than punishments)
+were judging the robot positively (three times more positive feedback than negative feedback),
 they were actually evaluating themselves.
 
 
 \begin{table}
     \centering
-    \caption{\footnotesize Feedback from the children to the robot. \emph{\#Dem}
-        denotes the average number of demonstrations per session provided by the children;
+    \caption{\footnotesize Feedback from the children to the robot. \emph{\#Demo}
+        denotes the average number of demonstrations per session provided by the child;
         \emph{\#Pos} and \emph{\#Neg} the total number of positive (resp.
-        negative) feedbacks they provided. $r$ (robot) and $r$ (child) is the correlation coefficient
+        negative) feedbacks they provided. $r_{robot}$ and $r_{child}$ are the correlation coefficients
         between the feedback provided by the children and the performance of the
         robot (resp. the child himself).}
     \begin{tabular}{ccccll}
         \toprule
-        \bf Child      & \bf \# Dem & \bf \# Pos & \bf \# Neg & $r$ (robot) & $r$ (child) \\ \midrule
+        \bf Child      & \bf \# Demo & \bf \# Pos & \bf \# Neg & $r_{robot}$ & $r_{child}$ \\ \midrule
         \emph{Val\'erie} & 42           & 24              & 6               & 0.25 \small\tt ** & 0.14 \small\it ns\\ 
         \emph{\'Emilien} & 74           & 20              & 9               & 0.06 \small\it ns & 0.02 \small\it ns\\
         \emph{Mathieu} & 43           & 10              & 3               & 0.23 \small\tt ** & 0.21 \small\tt **\\
@@ -742,33 +742,32 @@ they were actually evaluating themselves.
 
 \section{Conclusion}
 This paper provides the first results of long-term experiments 
-with CoWriter activity performed by one child at the time.
+conducted with CoWriter apparatus.
 
 Through adaptations of
-the interaction design and the learning algorithm, our goal was to induce a prot\'eg\'e effect in order to create an new extrinsic motivation.
+the interaction design and of the learning algorithm, our goal was to induce a prot\'eg\'e effect in order to create an new extrinsic motivation for the children to commit into a typically repetitive activity (handwriting training).
 
-The first case studies implied that it was possible to conduct a long-term interaction with the child and the robot keeping the quality of the child's commitment. According to our observations and interviews, we succeeded to induce a prot\'eg\'e effect, by building an affective bond between the child and the robot. We deduced the commitment from the increasing number of demonstrations and time spent to write demonstrations.
+The first case study evidences that it is possible to conduct a long-term interaction with the child and the robot, while maintaining a high-level of child engagement. According to our observations and interviews, we successfully induced a prot\'eg\'e effect by building an affective bond between the child and the robot. We evidenced the engagement of the child from his increasing number of demonstrations and time spent to write demonstrations.
 
-In the second study, we showed that the activity can be adapted to therapeutic contexts, and that even a child with strong inattention can find motivation to train the robot. 
+The second study shows that the activity can be adapted to real therapeutic scenarios, and that a child with severe attentional troubles can be motivated to train the robot over extended period of time.
 
-The third study aimed to estimate how children understood their role of teacher and how they perceived the robot's progress. We added two buttons to allow children to evaluate the robot. This evaluation was used to measure the comprehension of the child. If all children appeared intrinsically motivated by the activity, we can assume that those who understood and well played their role of teacher (given our measure) found their motivation by playing this role. In that case, since the evaluation was mostly positive, we believe that we successfully induced a prot\'eg\'e effect and that this effect was the key of children's motivation and commitment. 
+The third study aimed at evaluating how children adopt their ``robot teacher'' role and how they perceive the robot's progress. By presenting the children with an interface to evaluate the robot performance over the course of the experiment, we were able to assess their commitment as teachers. If all children appeared intrinsically motivated by the activity, we can assume that those who understood and well played their role of teacher (given our measure) found their motivation by playing this role. In that case, since the evaluation was mostly positive, we believe that we successfully induced a prot\'eg\'e effect and that this effect was the key of children's motivation and commitment. 
 
 
-The evaluation of the robot by the child also provided information about his satisfaction of the
+The on-line evaluation of the robot by the child also provides insights on the child's satisfaction with the
 learning process (both the robot's ability to learn and the child's own
 ability to teach). We believe that this information could be taken into account by
 the robot in order to improve the quality of the interaction. As an example, it
 could be used at two levels: $\bullet$ it is possible to detect if the child is playing
 seriously or not (a non-serious child may provide unrecognisable drawings and gives good grades to
-the robot while its level decreases), or if the child did not understand the
+the robot while its performance decreases), or if the child did not understand the
 activity (if he never uses the evaluation buttons and spends a lot of time to
-give a response). $\bullet$ We can reinforce the learnt allograph when the robot
-receives a good evaluation, or make it forget the allograph when it
+give a response). $\bullet$ We can reinforce the learnt letters when the robot
+receives a good evaluation, or make it forget the letter when it
 receives a bad evaluation.
 
-After all these
-experiments, we now have a large database of children writings that could be
-used to generate more interesting subspaces by PCA and robot initial states. 
+Besides, these experiments have allowed us to collect a large dataset of children writings that will be
+used in future work to generate more interesting subspaces by PCA and robot initial states. 
 Recurrent neural networks (RNN) for handwriting recognition and generation~\cite{DBLP:journals/corr/Graves13} could also be used to generate 
 children-like handwriting.
 
