@@ -449,13 +449,14 @@ After the experiment we interviewed the parent of the child. She was asked if sh
 We compared the number of demonstrations provided by Vincent along the 4 sessions (reported on Table~\ref{table:vincent_sess}) and we summed the time spend by the child to write demonstration during the 2 last sessions.
 \begin{table}
     \centering
-    \begin{tabular}{|c|c|c|c|c|}
-        \hline
-        Session & S1 & S2 & S3 & S4\\ \hline
-        Number of demo & 23 & 34 & 52 & 46\\ \hline
+    \caption{\footnotesize Number of demonstrations provided by Vincent over the four sessions.}
+    \begin{tabular}{lcccc}
+        \toprule
+        Session & S1 & S2 & S3 & S4\\ 
+        Number of demonstrations & 23 & 34 & 52 & 46\\ 
+        \bottomrule
 
     \end{tabular}
-    \caption{\footnotesize Number of demonstrations provided by Vincent along the 4 sessions.}
     \label{table:vincent_sess}
 \end{table}
 \subsection{Results}
@@ -715,6 +716,12 @@ they were actually evaluating themselves.
 
 \begin{table}
     \centering
+    \caption{\footnotesize Feedback from the children to the robot. \emph{\#Dem}
+        denotes the average number of demonstrations per session provided by the children;
+        \emph{\#Pos} and \emph{\#Neg} the total number of positive (resp.
+        negative) feedbacks they provided. $r$ (robot) and $r$ (child) is the correlation coefficient
+        between the feedback provided by the children and the performance of the
+        robot (resp. the child himself).}
     \begin{tabular}{ccccll}
         \toprule
         \bf Child      & \bf \# Dem & \bf \# Pos & \bf \# Neg & $r$ (robot) & $r$ (child) \\ \midrule
@@ -727,12 +734,6 @@ they were actually evaluating themselves.
         \emph{Ad\`ele}   & 35           & 4               & 2               & 0.28 \small\tt * & 0.30 \small\tt ** \\
         \emph{Marie}   & 40           & 5               & 1               & -0.02 \small\it ns & 0.13 \small\it ns\\ \bottomrule
     \end{tabular}
-    \caption{\footnotesize Feedback from the children to the robot. \emph{\#Dem}
-        denotes the average number of demonstrations per session provided by the children;
-        \emph{\#Pos} and \emph{\#Neg} the total number of positive (resp.
-        negative) feedbacks they provided. $r$ (robot) and $r$ (child) is the correlation coefficient
-        between the feedback provided by the children and the performance of the
-        robot (resp. the child himself).}
 
     \label{table:scores}
 \end{table}
