@@ -3,7 +3,7 @@
 \usepackage{graphicx} 
 \usepackage{subfigure}
 \usepackage{paralist}
-\usepackage[]{algorithm2e}
+\usepackage[boxruled]{algorithm2e}
 \usepackage{hyperref}
 \usepackage{ amssymb }
 \usepackage{url}
@@ -32,11 +32,12 @@
 \author{\IEEEauthorblockN{Alexis Jacq$^{1,2}$, S\'everin Lemaignan$^1$, Fernando Garcia$^1$, Pierre Dillenbourg$^1$, Ana Paiva$^2$}
 \IEEEauthorblockA{
 $^1$Computer-Human Interaction in Learning and Instruction Laboratory (CHILI) \\
-\'Ecole Polytechnique F\'ed\'erale de Lausanne (EPFL), Lausanne, Switzerland \\
+\'Ecole Polytechnique F\'ed\'erale de Lausanne (EPFL), Switzerland \\
 Email: \tt firstname.lastname@epfl.ch}
 \IEEEauthorblockA{
-$^2$Instituto Superior T\'{e}cnico, \\University of Lisbon, Portugal
-}
+$^2$INESC-ID \& Instituto Superior T\'{e}cnico\\
+University of Lisbon, Portugal\\
+Email: \tt firstname.lastname@inesc-id.pt }
 }
 
 \maketitle
@@ -92,29 +93,27 @@ The more the robot convinces the child that it is a beginner in
 handwriting who needs help -- building the ``prot\'eg\'e effect''-- the better
 the child will engage in the interaction. Two important technical aspects of
 credibility are: how to generate the initial state of the robot, and how to design its
-learning behavior. In our previous work~\cite{hood2015when}, we used a limited approach in which
+learning behaviour. In our previous work~\cite{Hood}, we used a limited approach in which
 letters had to be written as a single stroke (no pen lifting) and that covered
-typical mistakes of adults extracted from an handwritten letters database. Experiments with CoWriter were conducted in school, involving either group of
+typical mistakes of adults extracted from an handwritten letters database. Experiments with CoWriter were conducted in school, involving either groups of
 children doing the activity together or children
-in short individual sessions.
-
-These studies have been conducted to evaluate the feasibility and technical soundness
+in short individual sessions. These studies have been conducted to evaluate the feasibility and technical soundness
 of the interaction system. Because of the group effect and the briefness of
 interactions, no conclusions were reached about any positive effect of the
-interaction. Subject children where randomly chosen in school
+interaction. Children where randomly chosen in school
 classes and had no specific difficulties in handwriting. This made it
 impossible to observe any remediation of self-esteem or motivation.
 
-In this paper, we explore different algorithmic and staging approaches built on the system presented in~\cite{hood2015when} in order to figure out intricate aspects of long child-robot interactions in a pedagogical context. We solved previous 
+In this paper, we explore different algorithmic and staging approaches built on the system presented in~\cite{Hood} in order to figure out intricate aspects of long child-robot interactions in a pedagogical context. We solved previous 
 technical limitations of robot's letter learning and generation, and we introduce new algorithmic approaches that make robot's behaviour more convincing.
 Through three experiments, we involved children with real difficulties or low 
 self-esteem in repeated long sessions (four times about one hour). We used different
 measures, both qualitative and quantitative, to express the impact of those
 interaction with the CoWriter robot on the child.
 
-This article consists of four sections. In the first section we give technical details of our setup, such as how are connected the different modules
-together and which algorithms are used to learn and generate robot's letters.
-The following three parts report our three experiments and results. Two case studies specifically designed to be adapted to one child; one introduces a general design conducted with 8 children separately. 
+After a presentation of the work related to this topic, this paper is divided in four parts. First we give technical details of our setup, such as how are connected the different modules
+together and which algorithms are used to learn and generate robot's letters~\ref{overview}.
+The following three parts report our three experiments and results. Two case studies specifically designed to be adapted to one child~\ref{Vincent}~\ref{Thomas}; one user study conducted with 8 children separately~\ref{auto}. 
 
 \section{Related work}
 
@@ -144,10 +143,10 @@ Measurement of the children engagement must be based on a rigorous model. O'Brie
 %       \label{fig:Thomas}
 %   \end{figure}
 
-\section{Experiments design}
+\section{Experiments design}\label{overview}
 \subsection{Interaction overview}
 Figure~\ref{experimental_setup} illustrates our general experimental setup: a
-face-to-face child-robot interaction with an (autonomous) Aldebaran's {\sc nao}
+face-to-face child-robot interaction with an autonomous Aldebaran's {\sc nao}
 robot.
 
 A tactile tablet (with a custom application) is used by both the robot and the
@@ -155,7 +154,7 @@ child to write: in each turn, the child requests the robot to write
 something (a single letter, a number or a full word), and pushes the tablet
 towards the robot, the robot writes on the tablet by gesturing the writing (but
 without actually physically touching the tablet). The child then pulls back the
-tablet, corrects the robot's attempt by writing himself on top or next to
+tablet, corrects the robot's attempt by writing himself above or next to
 the robot's writing (see Figure~\ref{fig:Vincent}), and ``sends'' his
 demonstration to the robot by pressing a small button on the tablet. The robot
 learns from this demonstration and tries again.
@@ -165,7 +164,7 @@ he would be able to manage by himself the turn-taking and the overall
 progression of the activity (moving to the next letter or word). In our design,
 the turn-taking relies on the robot prompting for feedback once it is done with
 its writing (simple sentences like ``What do you think?''), and pressing on a
-small robot icon on the tablet once the child has finished correcting. We found that both approaches were easy to grasp for children.
+small robot icon on the tablet once the child has finished correcting. We found that both approaches were easy to be understood by children.
 
 
    \begin{figure}
@@ -230,7 +229,7 @@ ideas: In the first study (section~\ref{Vincent}) we generated a PCA subspace fr
 small set of allographs we drew arbitrary. Each time the child was providing a
 demonstration, we added that demonstration to the small set and re-built the
 PCA subspace. That way, the principal eigenvectors obtained progressively
-tended to encode the main deformations of letter done by the child. The following algorithm explains the successive steps of this approach:
+tended to encode the main deformations of letter done by the child. The algorithm~\ref{algo} explains the successive steps of this approach.
 
 \begin{algorithm}
    generate initial dataset $D$\;
@@ -244,6 +243,7 @@ tended to encode the main deformations of letter done by the child. The followin
    	learn the demonstration: $r''= \frac{1}{2} \dot (r'+d')$\;
    }
    \caption{learning from demonstration in adaptive PCA subspace}
+   \label{algo}
 \end{algorithm}
 
 From our perspective, this dynamic subspace was more adapted to the 
@@ -279,7 +279,7 @@ actual writing is displayed on a synchronised tablet.
 \begin{figure}[ht!]
 \centering
 
-\resizebox{1.1\linewidth}{!}{%
+\resizebox{1\linewidth}{!}{%
 
 \begin{tikzpicture}[
     >=latex,
@@ -347,7 +347,7 @@ project will be made is available online\footnote{The primary repository is\\
 
 \section{case study 1: Vincent}\label{Vincent}
 \subsection{Context}
-Vincent$^*$ is a five year-old child. At school, he has difficulties to learn writing, particularly with cursive letters. From our perspective, Vincent is shy and quiet. He suffers from poor self-confidence much more than any actual writing problem. The experiment was conducted without any therapist, in our laboratory. A parent was here to accompany the child, but she did not intervene during interactions. Children's personalities, conditions and state evaluation were reported by the parent.
+Vincent\footnote{The names of children has been changed.} is a five year-old child. At school, he has difficulties to learn writing, particularly with cursive letters. From our perspective, Vincent is shy and quiet. He suffers from poor self-confidence much more than any actual writing problem. The experiment was conducted without any therapist, in our laboratory. A parent was here to accompany the child, but she did not intervene during interactions. Children's personalities, conditions and state evaluation were reported by the parent.
 
 \subsection{Hypothesis}
 
@@ -375,8 +375,7 @@ With this study we consider the problem of long-term interactions. We hypothesiz
 \subsection{Experimental design and methodology}
 
 Our goal was to provide Vincent with
-an environment that would enable him to sustain engagement over four one-hour sessions, 
-one session per week. We decided to introduce a scenario to elicit a strong ``prot\'eg\'e effect" and such induce a stronger commitment. While the child came with low intrinsic motivation in writing exercise, our idea was to use the robot to introduce a new extrinsic motivation: improving letters in order to help the robot. 
+an environment that would enable him to sustain engagement during a session of an hour over 4 weeks. We decided to introduce a scenario to elicit a strong ``prot\'eg\'e effect" and such induce a stronger commitment. Our idea was to use this effect to promote a new extrinsic motivation: improving letters in order to help the robot. 
 
 
 In our scenario we used two Nao robots: a blue one 
@@ -399,12 +398,10 @@ Finally, Vincent formulated a response and helped the robot to write it.
 The fourth and last session was set as a test: Mimi, the ``explorer'' robot,
 came back from its mission and challenged Clem in
 front of Vincent: \emph{``I don't believe you wrote yourself these nice letters that I
-received! Prove it to me by writing something in front of me!''} This situation
-was meant to confirm the prot\'eg\'e effect: by judging the other robot's
-handwriting, Mimi would implicitly judge Vincent's skills as
-teacher, and in turn, Vincent's handwriting.
+received! Prove it to me by writing something in front of me!''} In this situation
+we pressed the prot\'eg\'e effect: Clem is going to be judged on its writing skills by Mimi, but Vincent is here to give a last help and to encourage his student.
 
-To complement the intrinsic motivation of helping a robot to communicate with another one, we
+To complement the motivation of helping a robot to communicate with another one, we
 gradually increased the complexity of Vincent's task to keep it challenging and
 interesting (first week: demonstration of single letters; second week:
 short words; third week: a full message -- Figure~\ref{fig:stimuli}).
@@ -416,7 +413,7 @@ short words; third week: a full message -- Figure~\ref{fig:stimuli}).
 Vincent had to tell the robot what to write with small plastic letters. A third person was here to send
 the formed word to the robot via the computer.
 
-During the experiment, all robot and child writings on the tablet were recorded on log files. Likewise, we recorded the time date when the child start and finish a demonstration.  
+During the experiment, we recorded writings of the child and the robot on the tablet into log files. We also recorded the time date when the child started and finished a demonstration.  
 
 %\begin{figure}
 %    \centering
@@ -438,7 +435,7 @@ During the experiment, all robot and child writings on the tablet were recorded 
 %       }
 %       \label{fig:mimi_mails}
 %   \end{figure}
-We measured the commitment of the child with the number of demonstration he provided. We also measured the duration of sessions. During the two last sessions, we recorded the time taken by the child to write demonstrations.
+We measured the commitment of the child with the number of demonstration he provided. We also measured the duration of sessions. During the two last sessions, we recorded the time taken by the child to write each demonstration.
 
 After the experiment we interviewed the parent of the child. She was asked if she observed any impact of our activity on the child.
 
@@ -446,19 +443,19 @@ After the experiment we interviewed the parent of the child. She was asked if sh
 \subsection{Analysis}
 
 We compared the number of demonstrations provided by Vincent along the 4 sessions (reported on Table~\ref{table:vincent_sess}) and we summed the time spend by the child to write demonstration during the 2 last sessions.
-\begin{table}
+\begin{table}[!]
     \centering
-    \begin{tabular}{|c|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|c|}
         \hline
-        Session & S1 & S2 & S3 & S4\\ \hline
-        Number of demo & 23 & 34 & 52 & 46\\ \hline
+        Session & S1 & S2 & S3 & S4 & Total\\ \hline
+        Number of demo & 23 & 34 & 52 & 46 & 155\\ \hline
 
     \end{tabular}
     \caption{\footnotesize Number of demonstrations provided by Vincent along the 4 sessions.}
     \label{table:vincent_sess}
 \end{table}
 \subsection{Results}
-Overall, Vincent provided 155 demonstrations to the robot. We can see in Table~\ref{table:vincent_sess} that the number of demonstrations provided by Diego was globally increasing along sessions while the difficulty of the activity was also increasing. Interestingly, as the number of demonstration decreased from session 3 to session 4, the total time spend to write demonstrations is similar: 41.6s in session 3 ($\thicksim$0.8s per letter) and 41.1s in session 4 ($\thicksim$0.89s per letter). A explanation of this result could be that since the difficulty was increasing the child spent more time to write his demonstrations. Our activity succeeded in the sense that the child found enough motivation to provide an increasing number of demonstrations, and was still (or even more) carefully in the last session.
+Overall, Vincent provided 155 demonstrations to the robot. We can see in Table~\ref{table:vincent_sess} that the number of demonstrations provided by Vincent was globally increasing along sessions while the difficulty of the activity was also increasing. Interestingly, as the number of demonstration decreased from session 3 to session 4, the total time spent to write demonstrations is similar: 41.6s in session 3 ($\thicksim$0.8s per letter) and 41.1s in session 4 ($\thicksim$0.89s per letter). A explanation of this result could be that since the difficulty was increasing the child spent more time to write his demonstrations. 
 
 After the first week, he showed
 confidence when playing with his ``prot\'eg\'e" and he built affective bonds with the robot
@@ -466,7 +463,7 @@ over the course of the study, as evidenced by some cries on the last session,
 and several letters sent to the robot \emph{after} the end of the study
 (one of them 4 months later) to get news. This represents a promising initial
 result: we can effectively keep a child committed into the activity with the robot for a relatively
-long periods of time (about 5 hours).
+long periods of time (about 4 hours).
 
 From the parent's perspective, Vincent was actually showing a new motivation in improving his handwriting. He took pleasure to work with the robot and to accomplish his teacher's mission. She confirmed that an affection of the child for the robot took root within the experiment. Finally she saw an improvement of his handwriting and explained that the child ``passed from a mix of script and cursive writing up to a full-cursive writing".
 
@@ -502,9 +499,9 @@ a positive impact on his self-esteem.
 Thomas, 5.5 years old child, is under the care of an occupational
 therapist. He has been diagnosed with visuo-constructive deficits.
 He was frequently performing random attempts and then was comparing
-with the provided template. Thomas is restless and careless: he
+with the provided template. According to the therapist, Thomas is restless and careless: he
 rarely pays attention to
-advice, even to what he is doing when he is currently drawing, and he is
+advice and does not take care of his drawing movement when he is writing. He is
 quickly shifting his attention from one activity to another.
 
 Thomas was working on number allographs with his therapist. During a prior
@@ -514,7 +511,7 @@ horizontally-inverted allographs, mainly for ``5". The experiment was conduced w
 
 \subsection{Hypothesis}
 
-The CoWriter activity can be adapted to a pedagogical context and help a child with diagnosed deficits to learn handwriting. 
+We aim to see if the CoWriter activity can be adapted to a pedagogical context in order help a child with diagnosed deficits to learn handwriting. 
 
 We believe that small modifications of the activity adapted to
 Thomas problems (visuo-constructive deficits and inattention) could help to
@@ -533,17 +530,16 @@ Since Thomas was frequently drawing horizontally-inverted numbers, or even
 unrecognisable allographs, the learning algorithm of the robot was converging to
 meaningless scrawls. To fix this problem, we programmed the robot to refuse allographs that
 were too distant to a reference with a threshold we arbitrary fixed. In that way,
-the child was forced to take care on what he was providing to the robot as
-demonstration. 
+the child was forced to take care of his demonstrations for the robot. 
 
 According to the therapist, it was easier for Thomas to memorize the way to draw
-a number if it was always done is the same order, \emph{e.g.} if the ``5" was always
+a number if it was always done is the same trajectory, \emph{e.g.} if the ``5" was always
 drawn from the top-right tip down to bottom. Therefore we programmed the robot to
-refuse as well a good allograph drawn in a wrong order. But in order to reassure Thomas
+refuse as well a good allograph drawn in a wrong trajectory. But in order to reassure Thomas
 about the right final allograph's shape, we made the robot able to recognize
 such a drawing, and, when it occurred, to use the phrase:
 \emph{``Oh, this is exactly the shape of the number I want to learn, but can you
-show me how to draw it in the opposite direction?"}
+show me how to draw it in the opposite trajectory?"}
 
 Also, to make
 the robot's progresses evident, we modified the initialization step of the
@@ -556,9 +552,8 @@ possibility to enter letters or words, and to switch to another activity (robot 
 
 \subsection{Measures}
 
-We recorded all the demonstration (vector of 70 points) performed by the child and by the robot to study if the child took care of his writing to make his demonstration accepted and if he was actually able to improve the robot's skills given the metric used to accept/reject. 
-
-The duration of sessions and the time spend by demonstration were also recorded by the logs of the tablet. 
+We recorded all the demonstration performed by the child and by the robot. 
+The duration of sessions and the time spend to draw demonstrations were also recorded by the logs of the tablet. 
 
 
 \subsection{Analysis}
@@ -588,8 +583,8 @@ As soon as Thomas understood that the robot was only accepting well-formed
 allographs, he started to focus on it and he would typically draw 5 or 6 times
 the number before actually sending to the robot (the tablet lets children
 clear their drawing and try again before sending it). According to
-the therapist, it was the first time that Thomas would correct himself in such a
-way, explicitly having to reflect on how \emph{another agent} (the robot) would
+the therapist, it was the first time that Thomas corrected himself in such a
+way: he mad the effort to take into account how \emph{another agent} (the robot) would
 interpret and understand his writing. Figure~\ref{Thomas_progress} shows how
 he gradually improved his demonstrations for some numbers, according to the
 metric we used to make the robot accept/refuse samples.
@@ -597,14 +592,14 @@ metric we used to make the robot accept/refuse samples.
 Since the robot's handwriting started from a simple primitive (a stroke), each
 time Thomas succeeded to have his demonstrations accepted by it, the robot's
 improvement was clearly visible (as measured in Figure~\ref{Thomas_distances}).
-This led to a self-rewarding situation that effectively supported Thomas'
+This led to a self-rewarding situation that efficiently supported Thomas'
 commitment.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.9\linewidth]{learning_6_distances}
     \caption{\small Two metrics to assess the handwriting progresses: Euclidean
-    distance in the subspace of the number dataset (top figure) or in
+    distance between demonstrations and templates in the subspace of the number dataset (top figure) or in
 Cartesian space (bottom figure). Green lines represent the robot performance,
 blue lines performance of the child. The round IDs correspond to the demonstrations
 pictured on Figure~\ref{learning_6_demos}.}
@@ -626,7 +621,7 @@ pictured on Figure~\ref{learning_6_demos}.}
 	\subfigure[number 5]{
         \includegraphics[width=4.1cm]{henry5}
     }
-    \caption{\small Improvement of Thomas demonstrations for some numbers: a) the number 2 and b) the number 5. Thomas progressively took care of the demonstrations he was providing to the robot for those numbers. We used for this figure the same metric than the one used for the acceptance algorithm. Distances are normalized with respect to the biggest value. The dashed line correspond to the threshold of robot's acceptance.}
+    \caption{\small Improvement of Thomas demonstrations for some numbers: a) the number 2 and b) the number 5. Thomas progressively took care of the demonstrations he was providing to the robot for those numbers. We used for this figure the same metric than the one used for the acceptance algorithm to measure distance between demonstration and templates. Distances are normalized with respect to the biggest value. The dashed line correspond to the threshold of robot's acceptance.}
 
     \label{Thomas_progress}
 \end{figure}
@@ -637,7 +632,7 @@ pictured on Figure~\ref{learning_6_demos}.}
 
 Each of previous studies was adapted to individual subjects : we used a special
 design for each case in order to sustain the child's commitment.
-In our next experiment, we conducted case studies with eight children using a single design. These children have in common difficulties to learn
+In this new experiment, we conducted case studies with eight children using a single design. These children have in common difficulties to learn
 cursive writing but the natures and intensities of those troubles are radically
 different from one child to another. Valerie (7 years old), Antoine (6.5) and
 Johan (7) are under the care of an
@@ -648,12 +643,12 @@ has been diagnosed with specific language impairment. All of these children are
 expected, given their school level, to know the allographs of
 cursive letters. The experiment was conducted along with an ergotherapist. 
 
-Our goal was to study the perception of the robot's progress in children. We want to know how easily they are able to take the role of teachers and to detect improvements or eventual degradations of the robot's letters. 
+Our goal was to study the perception of the robot's progress in children. We wanted to know how easily children were able to take the role of teachers and to detect improvements or eventual degradations of the robot's letters. 
 
 
 \subsection{Hypothesis}
 
-Children understand they role and find motivation to teach the robot. They are able to perceive robot's progress, and evaluate it in correlation with its progress in handwriting.
+Children understand their role and find motivation to teach the robot. They are able to perceive robot's progress, and evaluate it in correlation with its progress in handwriting.
 
 \subsection{Experimental design and methodology}
 
@@ -674,7 +669,7 @@ full responsibility of the teacher.
 
 We added two buttons on the tablet  interface: a green one with a ``thumbs up", and
 a red one with a ``thumbs down". Those buttons could be used by children to evaluate the
-robot (the green one was for rewards while the red one was for punishment). This
+robot (the green one stands for a positive feedback and the red one stands for a negative feedback). This
 way, we could measure the perception of the robot by the child: the more the
 child used evaluation buttons, the more he was playing the teacher, judging the
 robot instead of himself. Children were free to use the buttons when they wanted during the experiment. 
@@ -682,8 +677,8 @@ robot instead of himself. Children were free to use the buttons when they wanted
 
 \subsection{Measures}
 
-As in previous studies, we recorded the times of all demonstrations, the duration of demonstrations and we measured the commitment as the number of demonstration per session. 
-We recorded in logs each time an evaluation was provided by children. The awareness of children for the robot progress is measured as the correlation between children evaluations and distances between robot's letters and optimal templates.
+As in previous studies, we recorded all demonstrations, the time spent to draw them. We measured the commitment as the number of demonstration per session. 
+We recorded in logs each time an evaluation was provided by children. The awareness of children for the robot progress was measured as the correlation between children evaluations and distances between robot's letters and optimal templates.
 
 \subsection{Analysis}
 
@@ -693,7 +688,7 @@ We estimated the robot's progression as the difference between a starting score
 (score of the first robot's try when children have chosen a new word/letter to
 work on) and the current robot's score (after being taught by the child). The
 score is calculated as the average of euclidean
-distance between robot's try and a reference allograph over all letters of the
+distance between the robot's trial and the reference allograph over all letters of the
 word. Those references for letter allographs where drawn by us beforehand, taking inspiration in education.com cursive letters template\footnote{\url{http://www.education.com/slideshow/cursive-handwriting-z/}}. For each trial of the robot, we associate two values: the score of progress, and the child's immediate feedback (+1 if the child pressed the green button, -1 if he pressed the red one, 0 if he did not pressed any button after the trial). Then we focused on trials associated with non-zero grades and established Pearson's correlation test between score of progress and children feedback.
 
 \subsection{Results}
@@ -704,9 +699,9 @@ had preference to reward the robot (in total, 99 rewards and 33 punishments were
 
 We found that 5 of the 8 children provided evaluation significantly correlated with robot's progress. The coefficients of correlation and p-values of each child is reported in the second-to-last column of Table~\ref{table:scores}.
 
-We also studied correlation between children's evaluations and their own
+We also studied the correlation between children's evaluations and their own
 progression. The analysis was conducted in the same way, using distances between children demonstrations and reference allographs to compute children progressions.
-3 of 5 children evaluations correlated with the robot's progress were also significantly correlated with their own progress (last column of Table~\ref{table:scores}). For
+3 of the 5 children that had evaluations correlated with the robot's progress were also providing evaluations significantly correlated with their own progress (last column of Table~\ref{table:scores}). For
 those children, it seems that the robot was reflecting their own performances, and while they
 were judging the robot positively (three times more rewards than punishments)
 they were actually evaluating themselves.
@@ -729,9 +724,10 @@ they were actually evaluating themselves.
     \caption{\footnotesize Feedback from the children to the robot. \emph{\#Dem}
         denotes the average number of demonstrations per session provided by the children;
         \emph{\#Pos} and \emph{\#Neg} the total number of positive (resp.
-        negative) feedbacks they provided. $r$ (robot) and $r$ (child) is the correlation coefficient
+        negative) feedbacks they provided. $r$ (robot) is the correlation coefficient
         between the feedback provided by the children and the performance of the
-        robot (resp. the child himself).}
+        robot. $r$ (child) is the correlation coefficient
+        between the feedback provided by the children and their own progress.}
 
     \label{table:scores}
 \end{table}
@@ -743,24 +739,19 @@ This paper provides the first results of long-term experiments
 with CoWriter activity performed by one child at the time.
 
 Through adaptations of
-the interaction design and the learning algorithm, our goal was to induce a prot\'eg\'e effect in order to create an new extrinsic motivation.
+the interaction design and the learning algorithm, our goal was to induce a prot\'eg\'e effect in order to promote an extrinsic motivation to help the robot.
 
 The first case studies implied that it was possible to conduct a long-term interaction with the child and the robot keeping the quality of the child's commitment. According to our observations and interviews, we succeeded to induce a prot\'eg\'e effect, by building an affective bond between the child and the robot. We deduced the commitment from the increasing number of demonstrations and time spent to write demonstrations.
 
 In the second study, we showed that the activity can be adapted to therapeutic contexts, and that even a child with strong inattention can find motivation to train the robot. 
 
-The third study aimed to estimate how children understood their role of teacher and how they perceived the robot's progress. We added two buttons to allow children to evaluate the robot. This evaluation was used to measure the comprehension of the child. If all children appeared intrinsically motivated by the activity, we can assume that those who understood and well played their role of teacher (given our measure) found their motivation by playing this role. In that case, since the evaluation was mostly positive, we believe that we successfully induced a prot\'eg\'e effect and that this effect was the key of children's motivation and commitment. 
-
+The third study aimed to estimate how children understood their role of teacher and how they perceived the robot's progress. We added two buttons to allow children to evaluate the robot. This evaluation was used to measure the comprehension of the child. If all children appeared intrinsically motivated by the activity, we can assume that those who understood and well played their role of teacher (given our measure) found their motivation by playing this role. In their case, the fact that evaluations were mostly positive reveals the prot\'eg\'e effect induced by the activity. 
 
 The evaluation of the robot by the child also provided information about his satisfaction of the
 learning process (both the robot's ability to learn and the child's own
 ability to teach). We believe that this information could be taken into account by
 the robot in order to improve the quality of the interaction. As an example, it
-could be used at two levels: $\bullet$ it is possible to detect if the child is playing
-seriously or not (a non-serious child may provide unrecognisable drawings and gives good grades to
-the robot while its level decreases), or if the child did not understand the
-activity (if he never uses the evaluation buttons and spends a lot of time to
-give a response). $\bullet$ We can reinforce the learnt allograph when the robot
+could be used at two levels: $\bullet$ it is possible to get relevant information about the perception of the robot's progress by the child. $\bullet$ We can reinforce the learnt allograph when the robot
 receives a good evaluation, or make it forget the allograph when it
 receives a bad evaluation.
 
